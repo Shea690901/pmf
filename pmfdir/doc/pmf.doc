@@ -143,6 +143,9 @@ you must uncompress and unpack it:
         tar xvf pmf-1.12.1.tar
 Then follow the instructions on "Installing and compiling" below.
 
+---- Addendum (03.08.2015):
+Eventhough pmf still CAN be found on lysator, the new official site for
+'up-to-date' code is via git from github.com/Shea690901/pmf
 
 3. Installing and compiling
 ---------------------------

@@ -1,5 +1,5 @@
 
-This is the documentation for PMF version "1.13 (May 23, 1993)".
+This is the documentation for PMF version "1.13.1 (Oct 29, 1993)".
 
 Note: There are few (and no major) changes from 1.12 in this version.
       There is now a flag called "can_gag_fight", and empty lines in
@@ -21,9 +21,10 @@ BSD and SYSV UNIXes, but testing on SYSV is incomplete.
 No warranty, except that I guarantee that there ARE bugs in this program.
 Please read the section "Known bugs", and report additional problems to me.
 
-                        Thomas Padron-McCarthy
-                        Email: padrone@lysator.liu.se
-                        May 23, 1993
+                Thomas Padron-McCarthy
+                Email: padrone@lysator.liu.se
+                    (But I'm really busy now, so don't expect a quick answer.)
+                Oct 29, 1993
 
 ---------------------------------------------------------------------------
 
@@ -248,6 +249,8 @@ Then follow the instructions on "Installing and compiling" below.
         2. Try to make it work (but save the original of any file you edit!)
         3. Ask someone
         4. Ask me (send email to padrone@lysator.liu.se)
+           (But I'm really busy now, so don't expect an answer.
+            At least not a quick one.)
 
 
 4. Starting PMF

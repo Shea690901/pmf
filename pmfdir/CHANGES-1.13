@@ -7,3 +7,8 @@ The only changes that a user should notece are these:
 1. There is now a flag called "can_gag_fight".
 
 2. Empty lines in ".pmfrc" are ignored.
+
+Changes in version 1.13.1
+-------------------------
+
+Added a patch to "tty.c" (SYSV/BSD header stuff by dodurham@stimpy.ualr.edu).

@@ -4,17 +4,23 @@
  *  PMF -- Padrone's MudFrontend, a frontend for (maybe mostly LP-)mud
  *  Thomas Padron-McCarthy (Email: padrone@lysator.liu.se), 1990, 1991
  *  Share and enjoy, but be nice: don't steal my program! Hugo is watching!
- *  This file latest updated: Sept 21, 1991
+ *  This file latest updated: Oct 29, 1993
  *
  */
 
 #include <strings.h>
 #include <stdio.h>
-#include <sgtty.h>
 #include <signal.h>
 #include <setjmp.h>
 #include "config.h"
 #include "pmf.h"
+
+/* Added by dodurham@stimpy.ualr.edu for Linux machines */
+#ifdef SYSV
+#    include <termio.h>
+#else
+#    include <sgtty.h>
+#endif
 
 extern int echo_is_off;
 

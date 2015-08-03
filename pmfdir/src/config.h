@@ -4,7 +4,7 @@
  *  PMF -- Padrone's MudFrontend, a frontend for (maybe mostly LP-)mud
  *  Thomas Padron-McCarthy (Email: padrone@lysator.liu.se), 1990, 1991
  *  Share and enjoy, but be nice: don't steal my program! Hugo is watching!
- *  This file latest updated: May 23, 1993
+ *  This file latest updated: Oct 29, 1993
  *
  */
 
@@ -12,7 +12,7 @@
 /*  This is the version number. Please change it if you change the code.
  *  Don't simply increment it, add something instead!
  */
-#define VERSION			"1.13 (May 23, 1993)"
+#define VERSION			"1.13.1 (Oct 29, 1993)"
 
 /*  LOCAL_PMF_GURU is the person responsible for the installation of PMF.
  *  You don't have to #define LOCAL_PMF_GURU.
@@ -24,7 +24,7 @@
  *  the init file either, these defaults will be used.
  *  "mud.lysator.liu.se" will connect you to NannyMUD.
  *  (When I'm writing this, "mud.lysator.liu.se" translates to the
- *  numerical address 130.236.254.150, but this is subject to change.)
+ *  numerical address 130.236.254.159, but this is subject to change.)
  */
 #define DEFAULT_HOST_STRING	"mud.lysator.liu.se"
 #define DEFAULT_PORT_NUMBER	2000
@@ -35,7 +35,7 @@
  *  files instead.
  *  Note that "~" is not expanded in this directory name.
  */
-#define SYSTEM_DIR              "/home/ingatrix3/ida/tompa/pmf-1.13/pmfdir/system_dir"
+#define SYSTEM_DIR              "/home/diagnostix3/ida/tompa/pmf-1.13.1/pmfdir/system_dir"
 
 /*  These are the names of some files, usually in the system directory
  *  SYSTEM_DIR that is #defined above.

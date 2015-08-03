@@ -1,0 +1,6 @@
+        Variable:  history
+
+        The variable "history" controls how many commands to save on
+        the history list.
+
+        See also:  /set, /unset, variables, /history, substitute_history

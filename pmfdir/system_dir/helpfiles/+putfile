@@ -1,0 +1,23 @@
+        Syntax:  /putfile  LOCAL-FILE-NAME  [ REMOTE-FILE-NAME ]
+
+        (LPmud-specific)
+
+        This command sends a file to LPmud using the built-in editor ed.
+        What it does is basically to do these commands, plus
+        the appropriate waiting when needed:
+        
+                ed REMOTE-FILE-NAME
+                1,$d
+                i
+                send LOCAL-FILE-NAME *
+                w REMOTE-FILE-NAME
+                .
+                Q
+
+        All the text printed by the LPmud game while this is done is shown
+        on the screen -- like the error messages we get if the remote file
+        did not exist previously.
+
+        You can interrupt an active "/putfile" command by typing CTRL-C.
+
+        See also:  /getfile, /send, /receive

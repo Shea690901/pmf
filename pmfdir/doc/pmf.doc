@@ -1,0 +1,1146 @@
+
+This is the documentation for PMF version "1.12.1 (Sept 22, 1991)".
+
+PMF is an acronym for Padrone's MudFrontend (or maybe MudFilter).
+It is a frontend, also known as a client, for playing MUD.
+The PMF program connects to the MUD server in the same way as telnet, but
+some of the lines you type are interpreted as commands to the PMF program.
+
+PMF was developed for LPmud, but there should be nothing to prevent it
+from being used with other types of MUD games. It runs on (at least some)
+UNIX machines, NOT on (for example) VMS or MS/DOS. It should run both on
+BSD and SYSV UNIXes, but testing on SYSV is incomplete.
+
+No warranty, except that I guarantee that there ARE bugs in this program.
+Please read the section "Known bugs", and report additional problems to me.
+
+                        Thomas Padron-McCarthy
+                        Email: padrone@lysator.liu.se
+                        Sept 22, 1991
+
+---------------------------------------------------------------------------
+
+Contents of this documentation
+------------------------------
+
+        1.  Introduction
+        2.  Where do you get it from?
+        3.  Installing and compiling
+        4.  Starting PMF
+        5.  Interrupting, stopping, quitting and shell escapes
+        6.  Help
+        7.  All PMF commands (usually) start with a /
+        8.  Aliases
+        9.  The command "/perform"
+        10. The effect of quoting on alias substitution
+
+        11. The history list
+        12. History list - if you do NOT use the GNU readline library
+        13. History list - if you DO use the GNU readline library (the default)
+        14. Quoting against history substitution
+        15. Turning history substitution off and on
+        16. Quoting against all substitutions: the "/quote" command
+
+        17. Command line editing
+        18. The command "/last"
+        19. The command "/gag"
+
+        20. Init files
+        21. Saving the aliases, gags, variables, sounds and auto-actions
+        22. Executing commands from a file - the "/source" command
+        23. Logging
+
+        24. The robot mode and automatic actions
+        25. Hard-coded "robot actions"
+        26. The sound mode
+
+        27. Sending and receiving files to/from MUD
+        28. The commands "/putfile" and "/getfile" for LPmud wizards
+
+        29. Encrypted say and tell
+        30. The command "/cd"
+        31. Variables
+        32. A short description of the internals of PMF
+        33. 'More' mode
+        34. 2-windows mode
+        35. X-windows mode
+        36. Summary of PMF commands
+        37. Known bugs
+        38. Copyright and all that boring stuff
+        39. Thanks
+
+---------------------------------------------------------------------------
+
+1. Introduction
+---------------
+
+PMF is an acronym for Padrone's MudFrontend (or maybe MudFilter).
+It is a frontend, also known as a client, for playing MUD.
+It was developed for LPmud, but there should be nothing to
+prevent it from being used with other types of MUD games.
+
+The PMF program connects to the MUD server in the same way as telnet, but
+some of the lines you type are interpreted as commands to the PMF program.
+
+The PMF program also has an internal queue of commands to be sent to MUD, so
+you can type ahead without risk (actually: with a somewhat smaller risk)
+of losing any commands if the MUD game happens to be slow.
+
+If you are familiar with the UNIX shell tcsh, you should feel at home in PMF.
+It has the same kind of aliases, history list and command-line editing that
+you know from tcsh. Well, almost the same - there might be some subtle and
+irritating differences.
+
+Another interesting feature is a robot mode, allowing for automatic actions,
+and - if you are playing from a Sun SPARCstation - the possibility to
+add sound effects as an extra dimension to the game.
+
+There are also commands for sending files to the MUD game,
+and for receiving files from it.
+
+For more information, type "/help" or "help PMF" while in PMF.
+
+PMF runs on UNIX systems.
+If your system is not a UNIX system, PMF will not run on it.
+If your system IS a UNIX system, PMF will probably run on it.
+But I don't guarantee that you will be able to install it
+effortlessly on every imaginable type of system.
+
+I have compiled and run PMF on some different Unix systems,
+notably different Sun-3:s and Sun-4:s (including SPARCstations
+and SPARCservers), and on a Sequent Balance 8000 running DYNIX.
+On these systems, PMF will compile and run without additional work,
+but I know that PMF is in use on several other types of systems.
+
+
+2. Where do you get it from?
+----------------------------
+
+If you have ftp access, you can get the source code for PMF from Lysator's
+ftp.lysator.liu.se (130.236.23.254). Just type
+        ftp ftp.lysator.liu.se
+or, if that doesn't work,
+        ftp 130.236.23.254
+When it asks for your name, login as "anonymous".
+PMF is in the file pmf-1.12.1.tar.Z in the directory pub/lpmud/clients.
+You can get it by typing
+        cd pub/lpmud/clients
+        binary
+        get pmf-1.12.1.tar.Z
+        quit
+The GNU readline is included in the file pmf-1.12.1.tar.Z.
+When you have the file pmf-1.12.1.tar.Z on your system,
+you must uncompress and unpack it:
+        uncompress pmf-1.12.1.tar.Z
+        tar xvf pmf-1.12.1.tar
+Then follow the instructions on "Installing and compiling" below.
+
+
+3. Installing and compiling
+---------------------------
+
+1. Get the source code. The section above this one tells you how.
+
+2. Start by unpacking the files with "tar xvf pmf-1.12.1.tar".
+   When this is done, you will have a directory called "pmfdir",
+   and in that directory you will find some files and
+   some sub-directories, containing even more files.
+   The five subdirectories are called "src", "doc", "examples",
+   "system_dir" and "NeXT".
+   There is a file called FILES, with a list of all the files.
+
+3. The source code for PMF is in the directory "src".
+   You should now go there with "cd src".
+
+4. Decide if you want to use GNU readline (emacs-like command editing):
+        * If you DO want to compile PMF for using the GNU readline
+          library, you don't have to change anything.
+        * If you do NOT want to compile PMF for using the GNU readline
+          library, you must now edit Makefile. See the instructions in
+          that file. To save space, you can also delete the subdirectory
+          "readline".
+
+5. Decide if you want to use the sound mode for SUN SPARCs:
+        * If you DO want to compile PMF with the sound mode for
+          SUN SPARCs, you don't have to change anything, but you need
+          the sound files. These files are not included in this standard
+          PMF distribution, but you can get them from the same place
+          where you got PMF
+          (at least if that place was ftp.lysator.ida.liu).
+          Put the sound files in the directory "system_dir/soundfiles",
+          which is empty in the standard distribution.
+        * If you do NOT want to compile PMF with the sound mode for
+          SUN SPARCstations, you must now edit Makefile. See the
+          instructions in that file. This saves some space, but it is
+          fully possible to use PMF compiled with the sound mode
+          on other systems than SPARCs.
+          But the sounds will not work. :-)
+
+6. Move the sub-directory "system_dir" to a convenient place.
+   "system_dir" contains some system files, for example (in a sub-dir)
+   the help files.
+   Suggestion: Put it in your home directory, and call it "pmf_system_dir".
+   Or keep it where it was unpacked, in the subdirectory "system_dir"
+   in your PMF source directory.
+   The system directory must be accessible by all users who are going
+   to use this installation of PMF. If that means only you, don't worry.
+
+7. Edit config.h and set some constants:
+        a) You need to change SYSTEM_DIR, a constant that describes
+           where you have put the PMF system files as described above.
+        b) Define either BSD or SYSV, depending on the type of UNIX
+           you are using.
+        c) If you don't want to use NannyMud as the default mud to
+           connect to, you must change DEFAULT_HOST_STRING and
+           DEFAULT_PORT_NUMBER.
+        d) If you want to, you can also define LOCAL_PMF_GURU
+           (probably as yourself).
+
+8. Type 'make'. After a few minutes, you'll have an executable file
+   named "pmf" in the src directory.
+
+9. Move the executable program ("pmf") to where you want it.
+
+10. Edit the news file (NEWS in the PMF system dir, if you haven't
+    changed it in "config.h").
+    You'll can also edit ".pmfrc.default".
+
+11. If you need the disk space, you can now delete everything except
+    the executable file "pmf" and the directory "system_dir".
+    If you have put some of the system files #defined in "config.h",
+    like SYSTEM_DEFAULT_INIT_FILE, somewhere else, you should of course
+    save them too.
+    It might also be a good idea to save "config.h".
+
+12. Some common problems:
+        If make complained and said that it couldn't find usleep,
+        edit the Makefile so that the file usleep.o is included in the
+        variable OBJECTS.
+        If PMF crashes with an "alarm clock" message, use usleep2.o instead.
+        On some systems it is necessary to remove the -lresolv library
+        from the line in Makefile that describes how to link PMF.
+        On some systems you must add -ma to the options used by the compiler.
+        from the line in Makefile that describes how to link PMF.
+
+13. If it still doesn't work, try these (in order):
+        1. Try again
+        2. Try to make it work (but save the original of any file you edit!)
+        3. Ask someone
+        4. Ask me (send email to padrone@lysator.liu.se)
+
+
+4. Starting PMF
+---------------
+
+The syntax is:
+
+        pmf [ -FLAGS ] [ -f INITFILE ]
+            [ [ HOSTNAME | HOST-IP-ADDRESS ] [ PORTNUMBER ] ]
+
+Note that "pmf" is typed in lowercase, even if I usually use
+uppercase ("PMF") when writing about the program.
+
+If HOSTNAME and/or HOST-IP-ADDRESS is not given, PMF will connect to
+the host and port supplied in the init file, and, if none, to the
+default host and port that were defined when PMF was compiled and
+installed (the constants DEFAULT_HOST_STRING and DEFAULT_PORT_STRING
+in the file config.h).
+
+FLAGS can be X, which means X-windows mode (not very advanced, really),
+or d, meaning to turn ON the debug flag from start,
+or n, meaning to NOT print the local news file when starting PMF,
+or s, meaning to turn OFF the verbose flag from start,
+or 2, meaning 2-window mode (not implemented yet).
+
+If an INITFILE is given when starting PMF, commands to that file will be
+read before connecting to the game. If no INITFILE name is given, or of it
+can not be opened, a file called .pmfrc in the home directory is used.
+If no such file is found, or if it cannot be read, PMF will try a default
+init file, the name of which was defined when PMF was compiled.
+
+
+5. Interrupting, stopping, quitting and shell escapes
+-----------------------------------------------------
+
+If the user presses CTRL-C, all active send, receive and source commands
+will be interrupted, the files will be closed, and PMF will return to
+the normal command mode. All commands that have been put on the queue
+to MUD, but have not been sent yet, are thrown away.
+
+On many systems it is possible to press CTRL-Z to temporarily stop PMF.
+You will return to the shell, and can later restart PMF with the shell
+command "%N", where N is the job number of the PMF process. Use the shell
+command "jobs" to find the job number.
+
+You can execute a command in a shell with the PMF command
+        /system SHELL-COMMAND
+The command "/system", without an argument, will start your favourite
+shell as a subshell to PMF.
+
+The PMF command "/quit" breaks the connection with the MUD game and
+exits from PMF, without logging out from MUD.
+
+You should use the quit command in the MUD game when you want to exit.
+In LPmud it is called "quit" (without the slash).
+
+
+6. Help
+-------
+
+Use the command "/help", to get help about PMF, and (if you are
+playing LPmud) the command "help" to get help about the MUD game.
+The command "/help ?" prints a list of subjects you can give as
+argument to get specific information on these subjects, e. g.
+        /help pmf
+
+"/help PMF" will also work, since help requests are not case sensitive.
+
+You can add more help subjects yourself by creating new files in
+the directory where the help files are stored. You need to edit
+the index file (called "?") to get the new help subjects listed
+when you type "/help ?".
+Note that the help files for subjects starting with '/'
+should be put in files with names starting in '+'.
+As an example, the help text for "/alias" is in the help file "+alias".
+
+
+7. All PMF commands (usually) start with a /
+--------------------------------------------
+
+To make it easy to distinguish between local commands,
+(commands that are handled by PMF) and MUD commands,
+the local commands all start with a slash ("/").
+For example, in some MUDs have a command "status" to show
+some information about the game,
+but the status command in PMF is called "/status".
+
+If you don't want to type the extra "/" character in
+each PMF command, you can define aliases:
+        /alias status /status
+Now, when you type
+        status
+the aliasing mechanism will replaced that by
+        /status
+and the local PMF command "/status" will be executed.
+Note that you have now "hidden" the MUD command status,
+but if you want that command you can type
+        /quote status
+
+These alias definitions will work as expected:
+        /alias /h /history
+        /alias h /history
+        /alias kh kill harry
+        /alias /kh kill harry
+i. e. you can type either "/h" or "h" to look at the history list
+in PMF, and "kh" and "/kh" will both let you attack Harry on the MUD.
+
+If you strongly dislike this practice,
+you can use the flag "slash_commands" (true by default) in PMF.
+If this flag is set to false:
+        /unset slash_commands
+all PMF commands should be typed without the leading slash,
+as for example in the command
+        set slash_commands
+which will get the slashes back again.
+
+Note that if you disable the slash, some PMF commands will probably
+be the same as in the MUD, for example "set", "echo" and "cd".
+
+In this documentation, as well as in the on-line help, it is
+assumed that slash_commands is set to true.
+
+
+8. Aliases
+----------
+
+A useful feature of PMF, and the one which you probably want to
+learn about first, is the alias mechanism. If you have used the UNIX
+shells csh or tcsh, you are familiar with this concept. It works in
+a similar way in PMF.
+
+The alias mechanism allows you to abbreviate commands. The command
+        /alias SHORT-FORM EXPANDED-FORM
+will define the command SHORT-FORM, and whenever you type SHORT-FORM as a
+command (that is, at the beginning of a line), PMF will translate it to
+EXPANDED-FORM, before sending it to the game. As an example, if you define
+        /alias gft give firebreather to
+and then type
+        gft harry
+what will be sent to the game is
+        give firebreather to harry
+
+The character $ has a special meaning if used in EXPANDED-FORM. It is used
+to insert the arguments to the command SHORT-FORM in the EXPANDED-FORM. $1
+means the first argument, $2 the second, and so on. $0 means the command
+itself (SHORT-FORM), and $* will insert all the arguments.
+To insert a $ character, use $$.
+
+If you insert an L or l after the $ (as in $L1 or $L*), the argument or
+arguments will be converted to lower case.
+
+If no $-insertions were done, the arguments are simply concatenated to the
+expanded command:
+        /alias foo say
+        foo hej hopp
+will send
+        say hej hopp
+
+You can create multiple-line alias definitions by using $n, which will be
+substituted by a newline character. If the command was a command which was
+sent to the MUD game, PMF will wait for MUD to respond before proceeding to
+send the next line to the game.
+As an example, if you define the command foo as
+        /alias enjoy get $1 from corpse of $2 $n drink $1 $n grin
+and then type
+        enjoy firebreather harry
+what will be sent to the game is
+        get firebreather from corpse of harry
+        drink firebreather
+        grin
+and PMF will wait after the "get" and "drink" for the game to respond.
+
+There is a command called "/unalias" too:
+        /unalias enjoy
+
+
+9. The command "/perform"
+-------------------------
+
+Sometimes, usually in long aliases and robot-actions containing $n,
+it is necessary to wait for a specific answer from the MUD game before
+continuing to send commands. The command "/perform" can be used for this:
+        /perform MUD-COMMAND [ ACCEPT-TOKEN ]
+The MUD-COMMAND is sent to MUD, and no further commands will be sent
+until PMF has received a line matching ACCEPT-TOKEN, or just any line
+if no ACCEPT-TOKEN is given.
+
+ACCEPT-TOKEN is compared to the lines received from the MUD game
+using a simple string comparison, and, if that fails, using the same
+match function that is used to match robot actions, the "dollar-match".
+
+MUD-COMMAND must be one word, i. e. it must be quoted if it contains
+blanks. ACCEPT-TOKEN must also be one word, and it must appear at the
+beginning of a line, with no leading text or white space.
+
+
+10. The effect of quoting on alias substitution
+-----------------------------------------------
+
+Strings inside double quotes (") are treated as single words with respect
+to alias substitution. So, for example, if you give the commands
+        /alias tjoho say $1, $2 and $3 yeah!
+        tjoho "Hi Harry" "Wow, don't you feel great?" Zip Zap Zoom
+to PMF, the result would be that the command
+        say Hi Harry, Wow, don't you feel great? and Zip yeah!
+was sent to the MUD game.
+
+If you need to enter the character " in a command and don't want it
+interpreted as shown above, you can quote it by typing $". As an example,
+if the two commands
+        /alias tjoho say $1, $2 and $L3 yeah!
+        tjoho $"Hi Harry$" "Wow, don't you feel great?" Zip Zap
+were given to PMF, the MUD game would receive
+        tjoho "Hi, Harry" and wow, don't you feel great? yeah!
+
+You can also use the command "/quote" (see below).
+
+
+11. The history list
+--------------------
+
+The history list is probably the second most useful feature of PMF,
+after the alias mechanism.
+
+PMF keeps a list of the commands you have given, again in the same way
+as in the shells csh and tcsh. How this works exactly depends on whether
+you have compiled PMF with or without the GNU readline library.
+
+Remember that history substitution using the exclamation mark (!) is
+turned OFF by default, and if you want to use it you have to turn it on
+with the command
+        /set substitute_history
+either typed manually or in a init file (read below about init files).
+
+
+12. History list - if you do NOT use the GNU readline library
+-----------------------------------------------------------------
+
+PMF keeps a list of the commands you have given, and you can easily repeat
+these commands by using the abbreviations !! (last command) or !N, where
+N is either the number of a previous command, or a negative number referring
+to a command number relative to the current command. Thus, !-1 means the
+same thing as !!. The command
+        /history
+(which could of course be abbreviated to "hi" or something by using
+an alias) will print the list of commands.
+You can also give an argument to the command to control the number of lines
+that are printed.
+
+The number of commands to save on the history list is controlled by the
+variable "history", which you can change to any number that suits you with
+the command
+        /set history NUMBER
+where NUMBER is a positive integer, for example as in
+        /set history 10
+
+This version of history substitution only works at the beginning of a
+line in PMF, so for example the two commands
+        say hey
+        !! you there !!
+will be sent to MUD as
+        say hey
+        say hey you there !!
+if the flag "substitute_history" is true.
+
+
+13. History list - if you DO use the GNU readline library (the default)
+-----------------------------------------------------------------------
+
+If PMF is compiled with the flag GNU_READLINE, the history list functions
+in the GNU readline library will be used.
+
+Usually you will use CTRL-P and CTRL-N to move up and down in the history
+list, but these history functions also support a more advanced
+"exclamation-mark history expansion" than the functions described above.
+In addition to expanding "!something" at the beginning of a line,
+"!something" is expanded at any place on the line.
+You can also, among other things, use the syntax "!something:word" to
+expand to a specific word on a previous line, and "^old^new" to repeat
+the previous line but with the string "old" changed to "new".
+
+In this configuration, the two commands
+        say hey
+        !! you there !!
+will be sent to MUD as
+        say hey
+        say hey you there say hey
+if the flag "substitute_history" is true.
+
+
+14. Quoting against history substitution
+----------------------------------------
+
+Note: This ($!) only works if you use PMF WITHOUT the GNU readline library.
+      If you do use the GNU readline library, use the "/quote" command!
+
+If you need to enter the character ! in a command and don't want it
+interpreted as a reference to the history list, you can quote it by
+typing $!, as for example in the line
+        $!say Hi
+which will be sent to MUD as
+        !say Hi
+
+You can also use The command "/quote", which will send the rest of the
+line to the MUD game, without any changes at all.
+
+
+15. Turning history substitution off and on
+-------------------------------------------
+
+History is controlled by the flag "substitute_history".
+The default value for this flag is false, meaning that
+history substitution is turned OFF by default.
+
+You can turn it on and off with the commands
+        /set substitute_history
+and
+        /unset substitute_history
+respectively.
+
+
+16. Quoting against all substitutions: the "/quote" command
+-----------------------------------------------------------
+
+If you precede a command with the word "quote", no alias or history
+substitutions will be done. If you for example type
+        /quote   /set !"!jahsdf kxy!-19!!!""""%!$1$2$3$4 zap!!    $$ $n
+the command
+          /set !"!jahsdf kxy!-19!!!""""%!$1$2$3$4 zap!!    $$ $n
+will be sent to MUD, exactly as it was typed. Note that since there were
+three space characters between "/quote" and "/set", the line that is
+sent to MUD will start with two spaces, before the word "/set".
+
+
+17. Command line editing
+------------------------
+
+This is another very useful (or maybe the single most useful?) feature
+of PMF.
+
+If PMF is compiled with the flag GNU_READLINE, the GNU readline library will
+be used when the user enters commands to PMF. This means that while typing
+your commands, you can edit them in an Emacs-like style, and you can move
+up and down on the history list by typing CTRL-P and CTRL-N.
+
+Here is a summary of the most important commands available in GNU readline:
+
+        CTRL-B  Move back one character
+        CTRL-F  Move forward one character
+        DEL     Delete the character to the left of the cursor
+        CTRL-D  Delete the character underneath the cursor
+        CTRL-_  Undo the last thing that you did
+        CTRL-A  Move to the start of the line
+        CTRL-E  Move to the end of the line
+        ESC F   Move forward a word
+        ESC B   Move backward a word
+        CTRL-L  Clear the screen, reprinting the current line at the top
+        CTRL-R  Redisplay current line
+        CTRL-P  Move one line up on the history list
+        CTRL-N  Move one line down on the history list
+        TAB     File name completion
+
+You can also use a file called ".inputrc" in your home directory to set
+up the GNU readline in your own personal style, but I will not tell you
+how here!
+
+A small problem:
+        Since the MUD game can print text on your screen while you are
+        in the middle of editing a line, GNU readline sometimes fails to
+        update the screen to reflect what actually is on the line.
+        Use CTRL-R, or, if that fails, CTRL-L, to redisplay the line
+        that is being input.
+        (I am working on a better solution to this.)
+
+
+18. The command "/last"
+-----------------------
+
+This command
+        /last NUMBER
+prints the latest NUMBER of output lines received from MUD.
+For example, The command "/last 10" will print the 10 latest lines.
+If you type "/last" without an argument, all saved lines will be printed.
+
+The number of output lines to save is controlled by the variable
+"lines_to_save", which you can change to any number that suits you with
+the command
+        /set lines_to_save NUMBER
+where NUMBER is a positive integer, for example as in
+        /set lines_to_save 100
+
+
+19. The command "/gag"
+----------------------
+
+There is a command called "/gag". If you type
+        /gag PATTERN
+PMF will NOT print lines that match PATTERN.
+Attacks and fighting are always printed, but this mechanism can be defeated.
+
+Since the lines from MUD is matched against PATTERN in the same way
+as when looking for robot actions to do, i. e. using a "dollar-match",
+the "/gag" command can be used both to ignore everything a certain player
+or monster does, and to shut out shouting, fireballs etc.
+
+Examples:
+        /gag Harry
+        /gag "A ball of fire explodes in the sky."
+        /gag "$1 shouts:"
+
+Some messages from the MUD game actually consist of several messages,
+and the gagging mechanism will have problems with these. As an example,
+I once played on an LPmud game which periodically printed weather reports
+like "It is still rainy.". My attempt to gag these with
+        /gag "It is still rainy."
+failed, since the messages were printed using something like (in LPC code)
+        shout("It is still ");
+        ...
+        if (raining) shout("rainy.\n");
+and when the "rainy.\n" comes to PMF, "It is still " has already
+been processed, found not to be gagged, and printed.
+It doesn't work to gag "It is still ". If you do that, you
+will still see the message "rainy."!
+The only solution I have found looks like this:
+        /gag "It is still "
+        /gag "rainy."
+
+With no arguments to the "/gag" command, all gags are listed.
+
+There is a command called "/ungag" too.
+
+
+20. Init files
+--------------
+
+You can set up your own preferred environment with aliases, variable values
+and robot actions (and sounds) by the use of an init file.
+
+The first thing PMF does when started is to read the init file.
+If you gave a file name. using the -f flag, PMF tries to use that file as an
+init file. Otherwise, it looks in your home directory for an init file
+named ".pmfrc". If this too fails, it tries to use the system-wide default
+init file that was specified when PMF was compiled
+(usually ".pmfrc.default" on the PMF system directory).
+
+If you look in the subdirectory "system_dir", you will find a file
+called ".pmfrc.default" that can be used as a default init file,
+or as a model when writing your own .pmfrc.
+
+PMF then executes the commands from the init file, line by line.
+
+Lines starting with the character # (even after leading white space)
+are considered to be comments, and are ignored.
+Note that this only applies to lines in files that are read as init
+files or by the "/source" command - if you enter a line starting with
+a # as a normal command to PMF, it will not be ignored.
+
+If not done in the init file with The command "/connect", PMF then connects
+to the MUD server, and starts the "listening loop" - it listens
+simultaneously for commands given by the player and for text sent to it
+from the MUD game.
+
+
+21. Saving the aliases, gags, variables, sounds and auto-actions
+----------------------------------------------------------------
+
+You can dump all defined aliases, variable values, gags and autoactions on a
+file, in a format suitable for reading with the "source" command or as an
+init file. The command for this is
+        /dump FILENAME
+This feature makes it possible to save your (almost) entire customization of
+PMF and reload it at a later time, when playing a different game.
+
+
+22. Executing commands from a file - the "/source" command
+---------------------------------------------------------
+
+The command
+        /source FILENAME
+will read commands from the file FILENAME and execute them in the same way as
+they had been typed by the user directly on the terminal.
+
+These source'd commands will, however, NOT be history substituted, and they
+will NOT be put on the history list.
+
+Lines starting with the character # (even after leading white space)
+are considered to be comments, and are ignored.
+
+
+23. Logging
+-----------
+
+Use the command "/log" if you want to save all dialogue with MUD on a file.
+
+Note that this dialogue is not the same thing as what you see on your
+screen, since local commands (like, for example, "/log") and what PMF
+prints in response to those commands, are never sent to the MUD game.
+
+There is an alternative form of this command, called "/debuglog".
+This form will print not only the dialogue, but also comments on
+what was received and sent, and when.
+
+
+24. The robot mode and automatic actions
+----------------------------------------
+
+If the variable "robot" is set to true, which you do by typing
+        /set robot
+then PMF will enter a robot mode where it automatically performs actions
+depending on the messages (i. e. lines) it gets from the MUD game.
+
+These actions are entered with The command "/action", and are similar in
+appearance to the alias definitions discussed above.
+To define an auto-action give the command
+        /action PATTERN ACTION
+where PATTERN must be within double quotes if it contains spaces
+(see the text above). PATTERN is matched against the beginning of each line
+received from the MUD game. PATTERN can contain tokens of the type
+$N, which will be remembered and can be used in the ACTION part.
+This matching, using $-tokens, can be called "dollar-matching".
+
+As an example,
+    /action "$1 arrives" "kick $L1 $n say Prepare to die, $1! $n kill $L1"
+will probably give you a bad reputation.
+
+As in aliases, the combination $* will be substituted with all arguments,
+$n means newline, and $L (as in $L1 and $L*) means lowercase.
+
+The numbers after the $ characters in PATTERN are ignored.
+
+Note that for some LPmud commands, as in kick (at least in older
+versions), the argument must be lower-case.
+Refer to the arguments using $L in such cases.
+
+If an output line from MUD matches several robot actions,
+any one of these actions can be chosen by PMF.
+
+If too many robot actions are executed in a too short time (10 actions
+within 30 seconds), the robot mode is turned off automatically.
+
+There is a command called "/unaction" too, and "/unactionall".
+
+Note: Robot actions are executed in "express" mode, i. e. if there
+are other commands waiting on the queue to be sent to the MUD game,
+robot actions will be put first in the queue.
+
+
+25. Hard-coded "robot actions"
+------------------------------
+
+There are three hard-coded "robot actions", which cannot be disabled:
+
+1. If PMF receives a line containing only the word "PMF_QUERY_VERSION",
+   it will reply with a "say" command containing version and compile
+   time, like this:
+        say pmf version "1.12.1 (Sept 22, 1991)",
+                compiled Mon Sep 16 22:20:01 MET DST 1991
+   (on a single line, though).
+
+2. If PMF receives a line containing only the word "PMF_QUERY_HOST", it
+   will reply with a "say" command containing the name of the host, as in:
+        say host name "kickbox"
+
+3. If PMF receives a line containing only the word "PMF_QUERY_TERM",
+   it will reply with a "say" command containing the terminal type, as in:
+        say terminal type "vt100"
+
+
+26. The sound mode
+------------------
+
+If PMF has been compiled for use with sounds, and you are using a
+SUN SPARCstation, and the variable "sound" is set to true, PMF
+will add the dimension of sound to your MUD-playing experience.
+
+The sounds themselves are stored in a directory, specified at compile time,
+and are specified in a way similar to robot actions, but with the command
+"/sound" instead of "action", and with a file name instead of a robot action:
+        /sound PATTERN FILENAME
+
+As an example,
+        /sound "$1 bursts into tears." "cry.au"
+will cause the sound stored in the file "cry.au" on the sound directory
+to be played whenever a player starts to cry.
+
+If the file name starts with a slash (/), it will be used as a path name
+and not be searched for on the predefined sound directory. An example:
+        /sound "Harry $1" "/users/kurt/my-sounds/horrible-puke.au"
+
+
+27. Sending and receiving files to/from MUD
+-------------------------------------------
+
+Sometimes players, especially wizards, wants to send a whole file from
+their home machine to the MUD machine, or vice versa.
+PMF offers the "/send" and "/receive" commands for this:
+        /send FILENAME [ ACCEPT-TOKEN ]
+        /receive FILENAME [ STOP-TOKEN ]
+"/send" will send the contents of the file named FILENAME to the MUD game,
+without interpreting the lines (it just dumps them directly to the game),
+but waiting for MUD to respond after each line.
+
+If no ACCEPT-TOKEN is given, PMF accepts any message from the game as a
+confirmation that the game has received the line that was sent. In that
+case, spurious output, like other players entering the room, shouts etc,
+can cause lines to be lost.
+To prevent this an appropriate ACCEPT-TOKEN should be given. In the case
+of entering a file using the LPmud ed editor, "*" should be used:
+        /send FILENAME *
+
+To receive a file, the "/receive" command takes as argument a file name and a
+stop token. The stop token is a string, and input is read from MUD until the
+stop token matches the beginning of a line, or it is successfully dollar-
+matched against a line.
+
+The "/receive" command prints all received text on the screen.
+To avoid this, set the variable "show_receive" to false:
+        /unset show_receive
+
+While sending is in operation you can not give any commands to PMF.
+When receiving, you can give any commands.
+
+
+28. The commands "/putfile" and "/getfile" for LPmud wizards
+------------------------------------------------------------
+
+These commands are a more advanced version of the /send and /receive
+commands described above. They only work with LPmud, and use LPmud's
+built-in editor "ed".
+
+All the text printed by the LPmud game while this is done is shown
+on the screen, which might sometimes be confusing.
+When using "/getfile", you can, however, set the flag "show_receive"
+to FALSE, and the text will not be printed on your screen.
+
+The syntax is
+        /putfile  LOCAL-FILE-NAME  [ REMOTE-FILE-NAME ]
+and
+        /getfile  REMOTE-FILE-NAME  [ LOCAL-FILE-NAME ]
+
+"/putfile" sends a file to LPmud using the built-in editor ed.
+What it does is basically to do these commands, and to
+do the appropriate waiting when needed:
+        
+        ed REMOTE-FILE-NAME
+        1,$d
+        i
+        /send LOCAL-FILE-NAME *
+        w REMOTE-FILE-NAME
+        .
+        Q
+
+"/getfile" gets a file from LPmud, using the built-in editor "ed"
+to print it. What it does is basically to do these commands, and to
+do the appropriate waiting when needed:
+        /system "mv LOCAL-FILE-NAME LOCAL-FILE-NAME.bak"
+        ed REMOTE-FILE-NAME
+        $=
+and, for each ten lines, numbered N to M, in the file
+        N,Mp
+and finally
+        Q
+
+The "/getfile"  command prints the contents of the received file on
+the screen. To avoid this, set the variable "show_receive" to false:
+        /unset show_receive
+
+Obviously both "/putfile" and "/getfile" are very sensitive to the
+exact command syntax and output format of the LPmud editor.
+Changes in the LPmud user interface can cause these commands
+to stop working.
+
+
+29. Encrypted say and tell
+--------------------------
+
+PMF can be used for encrypted communication between players on MUD games.
+
+The encryption method is very simple, and given a few lines of encrypted
+text it can probably be easily broken, provided that you know something
+about such things. It uses the contents of the variable "cryptkey" as
+a key for the encryption. The longer this string is, the harder it will
+be for others to break the code.
+
+There are two encryption commands, "/cryptsay" and "/crypttell", which
+are the "encrypted" versions of LPmud's "say" and "tell".
+When they are used, the text said or told is encrypted and sent to MUD,
+and if another player is using PMF and has the same cryptkey, he will
+see it as plaintext, while other players will only see the encrypted version.
+
+Obviously, you and your partner must have the same cryptkey.
+
+You might want to define aliases, maybe "cryptsay" and "crypttell",
+for "/cryptsay" and "/crypttell".
+
+
+30. The command "/cd"
+---------------------
+
+This command is used to change the current directory of the PMF process.
+Examples:
+        /cd my_subdir
+        /cd
+        /cd ../../another_dir
+
+The command "/system cd DIR" wouldn't work, since that would only change
+the directory of the shell that is started by the "/system" command.
+
+We don't need commands called "/ls" or "/pwd", since
+"system ls" and "system pwd" will work perfectly.
+
+
+31. Variables
+-------------
+
+There is a set of variables in PMF that affect the behaviour of
+the program. They can be changed with the commands
+        /set VARIABLE
+        /set VARIABLE VALUE
+        /unset VARIABLE
+The command "/set", without any arguments, lists all set variables.
+The command "/status" can also be useful here.
+
+The available variables are:
+
+        achtung:        beep on every line received from the MUD game
+                        (boolean, default: FALSE)
+        cryptkey:       the key for the encryption of /cryptsay and /crypttell
+                        (string, default: FALSE)
+        debug:          print debug messages
+                        (boolean, default: FALSE)
+        history:        the number of lines to save on the history list
+                        (numerical, default: 20 or so)
+        host:           the remote host to which we are connected
+                        (text, default: defined at compile time)
+        ignoreeof:      don't quit if the user types CTRL-D
+                        (boolean, default: FALSE)
+        lines_to_save:  the number of lines to save on the "last" list
+                        (numerical, default: 20 or so)
+        port:           the port on the remote host to which we are connected
+                        (text, default: defined at compile time)
+        prompt:         what to print after having completed a local command
+                        (text, default: probably "pmf %d> ")
+        replace_control:
+                        print \007 instead of beeping, etc
+                        (boolean, default: FALSE)
+        robot:          robot mode
+                        (boolean, default: FALSE)
+        screen_length:  the number of lines to print before the screen is full
+                        (numerical, default: 0)
+        show_receive:   print lines received by "/receive" or "/getfile"
+                        (boolean, default: TRUE)
+        slash_commands: PMF commands should start with a slash ("/")
+                        (boolean, default: TRUE)
+        sound:          sound mode on
+                        (boolean, default: FALSE)
+        substitute_history:
+                        substitute !-history references
+                        (boolean, default: FALSE)
+        verbose:        print a lot
+                        (boolean, default: TRUE)
+
+The default values can of course be changed in your init file.
+
+
+32. A short description of the internals of PMF
+-----------------------------------------------
+
+The first thing PMF does when started is to read and execute an
+init file, as described above.
+
+If not done in the init file, PMF then connects to the MUD server,
+and starts the "listening loop" - it listens simultaneously for commands
+given by the player and for text sent to it from the MUD game.
+
+As soon as some text is available from the MUD game, PMF reads it, one line
+at a time, and checks if it should be gagged. If it is gagged, nothing more
+is done. Else, it is printed on the screen for the user to look at. Then it
+is sent to the function "robot_handle_line", which matches against the list
+of robot actions, and to the function "sound_handle_line", which matches
+against the list of sound effects.
+The line is also stored on a list for use by the "/last" command.
+
+When the player types a command, it is first checked for history references
+(!! or !number), and the corresponding lines are inserted.
+
+Then, alias substitution is performed. If the player has defined an alias with
+        /alias plop "echo $2 $0 $n zaok zaok"
+this will be evaluated to
+        echo  lo  plop $n zaok zaok
+This is, finally, translated to the two lines
+        echo  lo  plop 
+        zaok zaok
+which are then put on the queue to be sent to the game.
+
+When sending a command line from that queue to the MUD game, PMF
+waits for some response from the game before sending another line.
+
+
+33. 'More' mode
+---------------
+
+If the variable 'screen_length' is set to a numeric value except 0,
+PMF will show that number of lines and then stop, waiting for the user
+to press the RETURN key before continuing.
+
+
+34. 2-windows mode
+------------------
+
+This is not implemented yet.
+
+If you give the flag argument '2' when starting PMF, as in
+        pmf -2 nanny.lysator.liu.se 2000
+PMF will split the screen in two parts, and separate input and
+output between them.
+
+
+35. X-windows mode
+------------------
+
+If you are using PMF from an X-windows environment, you can give the
+command-line argument -X to start a rudimentary two-window mode
+using two X-windows windows.
+
+An extra window will be created, and all output from the MUD game
+will be printed in that window.
+
+
+36. Summary of PMF commands
+---------------------------
+
+These commands are defined in PMF:
+
+    /help [ subject ]  -- print help info (also "help PMF")
+    /alias, /unalias   -- alias definitions
+    /dump              -- write definitions and variables to a file
+    /history           -- print history list
+    !!, !number, !str  -- redo commands from the history list
+    /last              -- repeat last lines printed by MUD
+    /quote             -- send a command to MUD without interpreting it
+    /action, /unaction, /unactionall -- define robot actions
+    /sound, /unsound   -- define sound actions (if PMF is set up for it)
+    /gag, /ungag       -- don't print the actions of a specific player
+    /source            -- read and execute a file
+    /send, /receive    -- send or receive text to/from MUD
+    /putfile, /getfile -- send or receive a file to/from LPmud
+    /log, /debuglog    -- save dialogue on a file
+    /set, /unset       -- change the value of variables
+    /status            -- print status of debug flag etc
+    /quit              -- exit from PMF, but don't logout from MUD
+    /cd                -- change directory (locally)
+    /perform, /echo, /beep, /system, /connect, /disconnect -- miscellaneous
+
+
+37. Known bugs
+--------------
+
+Current known problems and things needed:
+
+      - Two-window mode is not done at all.
+      - The X-mode is somewhat rudimentary.
+      - /getfile needs improvement. It sometimes fails.
+      - Some of the code is not very elegant. (But maybe some of it is.)
+      - There should be a priority mechanism for robot actions and gags.
+      - The name isn't that good.
+
+Problems with PMF using the GNU readline library:
+
+      - Since it doesn't know what prompt to use, it sometimes prints
+        strange things when it tries to display a line that is being edited.
+      - It has been known to crash, at least on my SPARC. This is probably
+        because of the signal handling, since both my code and the GNU readline
+        library catch signals. Or maybe it's something else.
+
+
+38. Copyright and all that boring stuff
+---------------------------------------
+
+Note that if you are using the GNU readline library, all copyright,
+licensing, utter lack of warranty etc required by the GNU license,
+under which the GNU readline library is distributed, applies.
+See the file "COPYING" in the subdirectory "readline".
+
+PMF, Padrone's Mud-Frontend, is distributed without any form of copyright
+or license. You can change, re-distribute or throw away this code, and
+you can put it in a small box and sit on it. Noone will sue you.
+Share and enjoy!
+
+However, even if I haven't bothered with copyrights and stuff, I have
+made a deal with an evil demon from hell who calls himself Hugo den Grymme.
+In return for letting him use my program (plus some help regarding
+virgins that I'd rather not discuss here), he has agreed to take care of
+anyone who does things to the program that I don't like.
+
+So, if you steal my program and sell it, if you find out some way to make
+money from it and don't give that money to me, if you claim that it was
+you and not I who wrote PMF, or if you make changes to it and re-distribute
+it without changing the version number, Hugo den Grymme will come for you.
+As I wrote above, noone will sue you, but your immortal soul is in danger.
+
+Naturally, PMF comes without any warranty. Hugo doesn't like warranties.
+
+
+39. Thanks
+----------
+
+To everybody who has shown interest in PMF, either by testing it,
+by submitting new ideas, or by contributing with better code.
+
+I have got inspiration from TinyTalk, tcsh, lpmud.el for GNUemacs,
+bash and TinyFugue. The IPC code was originally copied from TinyTalk.
+
+Special thanks to Tommy Finsen, Nuisance, Demonlord, and Markus Baumeister.
+Also to Pell Pell Pell, Kjell Post and Thomas Bellman for recording the
+sounds that I use for the sound mode.
+Thanks also to Inge Wallin, James Risner and Scott Hoffmann (Diode).

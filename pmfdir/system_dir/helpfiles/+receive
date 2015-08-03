@@ -1,0 +1,18 @@
+        Syntax:  /receive  FILENAME  STOP-TOKEN
+
+        The file FILENAME is opened for writing, and lines are read from
+        MUD and written to that file until STOP-TOKEN is received.
+        STOP-TOKEN must be one word, i. e. it must be quoted if it contains
+        blanks.
+
+        When matching STOP-TOKEN against output lines, the STOP-TOKEN
+        must either appear at the beginning of a line, with no leading text
+        or white space, or it must be a pattern that can be "dollar-matched"
+        (as in the robot actions) against the output lines.
+
+        If the flag "show_receive" is false, the received lines are not
+        printed on the screen, but instead a dot is printed for each line
+        that is received.
+        You can interrupt an active "/receive" command by typing CTRL-C.
+
+        See also:  /send, /getfile, show_receive

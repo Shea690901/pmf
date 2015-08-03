@@ -1,0 +1,12 @@
+        Syntax:  /action  [ PATTERN  [ ACTION ] ]
+
+        Define a robot action.
+        This is an example of how this command can be (mis-)used:
+            /action "$1 arrives" "kick $L1 $n say Eat my sword, $1! $n kill $L1"
+        With no arguments, all robot actions are listed.
+        To turn on the robot mode, you have to set the "robot" flag to true:
+            /set robot
+        To turn the robot mode off, use the command "/unset":
+            /unset robot
+
+        See also:  /unaction, /unactionall, robot

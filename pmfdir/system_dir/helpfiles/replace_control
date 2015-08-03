@@ -1,0 +1,7 @@
+        Variable:  replace_control
+
+        When this variable is set, all control characters (except tab
+        and newline) are printed as \octal-number.
+        As an example, bell (CTRL-G) is printed as \007.
+
+        See also:  /set, /unset, variables

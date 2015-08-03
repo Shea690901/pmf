@@ -1,0 +1,14 @@
+
+This is a README file written by the author of pmf, a program using
+the GNU readline library.
+
+Note that all copyright, licensing, warranty etc needed
+under the GNU license, under which the GNU readline library
+is distributed, applies.
+
+I have copied the source to the GNU readline library from the source
+code of GNU bash 1.05. I copied all the files from the directory with
+the readline library, and added the file COPYING from the bash directory.
+I have also added this README file.
+
+	tpm Oct 14, 1990

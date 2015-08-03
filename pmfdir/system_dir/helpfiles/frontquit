@@ -1,0 +1,5 @@
+        In PMF version 1.11 and earlier,
+        there was a command called "frontquit".
+        This command is now called "/quit".
+        If you want backwards compatibility, you can define an alias:
+                /alias frontquit /quit

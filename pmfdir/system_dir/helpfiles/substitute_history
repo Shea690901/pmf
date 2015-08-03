@@ -1,0 +1,5 @@
+        Variable:  substitute_history
+
+        When this variable is true, "!" references are expanded.
+
+        See also:  /set, /unset, variables, history

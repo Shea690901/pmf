@@ -1,0 +1,6 @@
+        Syntax:  /unset  VARIABLE
+
+        Sets the value of a variable to false.
+        "/set  VARIABLE  false" does NOT work.
+
+        See also:  /set, variables

@@ -1,0 +1,9 @@
+        The command "quit" is used by LPmud. This command is not intercepted
+        by PMF, it is simply passed on to LPmud.
+        Note that if you are not at the LPmud command prompt (">"),
+        LPmud will probably not understand the command.
+        If you type CTRL-D to PMF, or give the local command "/quit",
+        the connection will be broken,
+        but you will still be logged in on the game (but "link-dead").
+
+        See also:  /quit

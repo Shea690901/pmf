@@ -1,0 +1,16 @@
+        Variable:  slash_commands
+
+        When "slash_commands" is true (this is the default),
+        the PMF commands are supposed to start with a slash ("/"), like this:
+                /alias kh "kick harry"
+        but if it is set to false, commands are not supposed to start
+        with a slash:
+                alias kh "kick harry"
+
+        Note that alias expansion is performed on the line first,
+        so you can define aliases like
+                alias /history history
+                alias history /history
+                alias frontset /set
+
+        See also:  /set, /unset, variables, /alias

@@ -1,0 +1,7 @@
+        Variable:  robot
+
+        When "robot" is true, PMF will match each line of output from MUD
+        against the list of robot actions defined with the "/action" command.
+        If a match is encountered, that robot action will be executed.
+
+        See also:  /set, /unset, variables, /action

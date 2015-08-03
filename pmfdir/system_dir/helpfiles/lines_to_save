@@ -1,0 +1,5 @@
+        Variable:  lines_to_save
+
+        The number of received lines to save in the "last" buffer.
+
+        See also:  /set, /unset, variables, /last

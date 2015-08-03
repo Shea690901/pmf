@@ -1,0 +1,7 @@
+        Variable:  screen_length
+
+        When this variable is set to a numeric value except 0,
+        PMF will show that number of lines and then wait for the
+        user to press the RETURN key before continuing.
+
+        See also:  /set, /unset, variables

@@ -1,0 +1,20 @@
+Mailed to me from a posting on comp.sys.next.programmer:
+
+
+Do the following on the NeXT:
+
+ /usr/bin/sndconvert -r -c 1 -s 8000 -o <toNextSnd>.snd -f 1 <fromSunSnd>.au
+ /usr/bin/sndplay foo.snd
+
+and enjoy...
+ - LeeN
+
+There is also a file included, au2snd.c, that will convert sound files in
+(hopefully) a similar way. This being summer vacation for me, I have not 
+tested any of this because the NeXT I'm logged into is currently about 200
+miles away. Testing will commence when I return.
+  Instructions on how to compile au2snd are included in the opening remarks.
+Type 'head au2snd.c' to see them...
+                                              Scott/Diode
+                                           s-hofmann@uiuc.edu
+

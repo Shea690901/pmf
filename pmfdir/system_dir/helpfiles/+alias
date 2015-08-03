@@ -1,0 +1,8 @@
+        Syntax:  /alias  [ command  [ definition ] ]
+
+        PMF has an alias mechanism, inspired by csh.
+        To insert command arguments in the defined alias, use the tokens
+        $number, $*, $Lnumber or $L*.
+        "/alias" with no arguments prints a list of all defined aliases.
+
+        See also:  /unalias

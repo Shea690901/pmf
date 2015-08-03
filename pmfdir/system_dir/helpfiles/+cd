@@ -1,0 +1,7 @@
+        Syntax:  /cd  [ DIRECTORY ]
+
+        Changes the current directory of the PMF process to DIRECTORY.
+        The command "/system cd DIRECTORY" wouldn't work, since that would
+        only change the current directory in a subshell.
+        Other commands, like "/system pwd" and "/system ls -a",
+        work as they should, though.

@@ -1,0 +1,7 @@
+        Variable:  debug
+
+        When this variable is set, some debugging messages are printed on
+        the screen, showing what happens in the dark and unexplored depths
+        of the internals of PMF.
+
+        See also:  /set, /unset, variables

@@ -1,0 +1,12 @@
+        Syntax:  /gag  [ PATTERN ]
+
+        Gag a player, i. e. don't print what that player does or says.
+        PMF tries, however, to always print any messages about attacks and
+        fighting, but this mechanism can be defeated.
+        With no arguments, all gags are listed.
+
+        Since the lines from MUD is matched against PATTERN in the same way
+        as when looking for robot actions to do, the "gag" command can be
+        used to shut out shouting, fireballs etc.
+
+        See also:  /ungag

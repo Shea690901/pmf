@@ -1,0 +1,5 @@
+        In PMF version 1.11 and earlier,
+        there was a command called "frontset".
+        This command is now called "/set".
+        If you want backwards compatibility, you can define an alias:
+                /alias frontset /set

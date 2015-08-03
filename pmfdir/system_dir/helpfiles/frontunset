@@ -1,0 +1,5 @@
+        In PMF version 1.11 and earlier,
+        there was a command called "frontunset".
+        This command is now called "/unset".
+        If you want backwards compatibility, you can define an alias:
+                /alias frontunset /unset

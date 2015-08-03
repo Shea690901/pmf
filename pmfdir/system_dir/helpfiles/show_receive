@@ -1,0 +1,13 @@
+        Variable:  show_receive
+
+        Usually all text from the MUD game is printed on the player's
+        screen, except for lines filtered out by gags (see "/gag").
+        This can be irritating when a lot of text is sent, as when
+        receiving a file using "/receive" or "/getfile".
+
+        If this variable is changed to false, with the command
+                /unset show_receive
+        text received from MUD while doing a "/receive" or "/getfile"
+        command will NOT be printed on the screen.
+
+        See also:  /set, /unset, variables, /receive, /getfile, /gag

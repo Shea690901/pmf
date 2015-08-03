@@ -1,0 +1,17 @@
+        Syntax:  /crypttell  NAME  STRING
+
+        Encrypted communication between two players on LPmud games.
+
+        The command "/crypttell" uses the encryption key given in the
+        variable "/cryptkey" to encrypt STRING, yielding ENCRYPTED-STRING.
+        The command
+                tell NAME PMF_CRYPTSAY: ENCRYPTED-STRING
+        is then sent to the MUD game.
+
+        When another PMF program receives such a line, it is decrypted
+        using the value of "cryptkey" (if set),
+        and then printed in de-crypted form.
+
+        Obviously, you and your partner must have the same cryptkey.
+
+        See also:  /cryptsay, cryptkey

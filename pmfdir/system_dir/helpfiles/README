@@ -1,0 +1,14 @@
+In this directory the help files for PMF's on-line help function
+are stored. In PMF, the command
+        /help SUBJECT
+will print the help file on SUBJECT.
+
+The help files for subjects starting with "/", as the commands do,
+should start with "+" instead.
+The help files should usually have lowercase names.
+
+If you add new help files, you should also edit the file "?".
+
+If a help request, say "FOO" isn't found, it's tried with a "/",
+i. e. "/FOO", and then in lowercase, i. e. "/foo".
+Help file names should usually be in lower case.

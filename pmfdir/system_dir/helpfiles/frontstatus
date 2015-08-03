@@ -1,0 +1,5 @@
+        In PMF version 1.11 and earlier,
+        there was a command called "frontstatus".
+        This command is now called "/status".
+        If you want backwards compatibility, you can define an alias:
+                /alias frontstatus /status

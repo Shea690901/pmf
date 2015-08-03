@@ -1,0 +1,7 @@
+        Syntax:  /dump  FILENAME
+
+        This command will write all alias definitions, variable values,
+        robot actions and gagged players to the file FILENAME.
+        This file is in a format suitable for the "/source" command,
+        so the command "/dump" can be used to save your customization
+        of PMF between sessions, or when creating an init file.

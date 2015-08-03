@@ -1,0 +1,23 @@
+        Syntax:  /cryptsay  STRING
+
+        Encrypted communication between players on LPmud games.
+
+        The command "/cryptsay" uses the encryption key given in the
+        variable "/cryptkey" to encrypt STRING, yielding ENCRYPTED-STRING.
+        The command
+                say PMF_CRYPTSAY: ENCRYPTED-STRING
+        is then sent to the MUD game.
+
+        When another PMF program receives such a line, it is decrypted
+        using the value of "cryptkey" (if set),
+        and then printed in decrypted form.
+
+        Obviously, you and your partner must have the same cryptkey.
+
+        WARNING 1: The encryption is simple and can probably be broken easily,
+                   at least if you know something about such things.
+
+        WARNING 2: You still have to transmit the key in some way,
+                   and someone could be listening then too.
+
+        See also:  /crypttell, cryptkey

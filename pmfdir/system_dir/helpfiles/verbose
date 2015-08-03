@@ -1,0 +1,9 @@
+        Variable:  verbose
+
+        When "verbose" is false, PMF prints somewhat fewer messages.
+        It has no effect on the output from Mud.
+        This variable can be set to false with the command-line
+        option -s to PMF, or with the PMF command
+                /unset verbose
+
+        See also:  /set, /unset, variables

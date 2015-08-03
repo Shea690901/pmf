@@ -1,0 +1,7 @@
+        Syntax:  /last  [ NUMBER ]
+
+        Prints the last NUMBER of lines that were received from the MUD game,
+        or, if no NUMBER was given, print all lines that are saved,
+        i. e. the number indicated by the "lines_to_save" variable.
+
+        See also:  lines_to_save

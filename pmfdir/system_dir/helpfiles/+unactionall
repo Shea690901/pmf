@@ -1,0 +1,5 @@
+        Syntax: unactionall
+
+        Removes all robot actions.
+
+        See also:  /action, /unaction, robot

@@ -1,0 +1,9 @@
+This is the README file for PMF, Padrone's MudFrontend.
+
+PMF stands for Padrone's MudFilter, and is a frontend, also known as a client,
+for playing MUD. It was developed for LPmud, but there should be nothing to
+prevent it from being used with other types of MUD games.
+
+The file "doc/pmf.doc" contains the documentation for PMF,
+including information on where you get it from,
+and how to compile and install it on your system.

@@ -1,0 +1,19 @@
+        Syntax:  /sound  [ PATTERN [ FILENAME ] ]
+
+        If you are playing from a SUN SPARCstation, you can use PMF
+        to add the dimension of sound to the MUD game.
+        The command "/sound" defines a sound action.
+        When a line that matches PATTERN is received from the MUD game,
+        and the variable "sound" is true, PMF will send the sound contained
+        in the file FILENAME to the loudspeaker of your SUN SPARCstation.
+
+        With no arguments, all sound actions are listed.
+        To turn on the sound mode, you have to set the "sound" flag to true:
+                /set sound
+        and to turn it off, you must set it to false:
+                /unset sound
+
+        This command has no effect if PMF has not been compiled for using
+        the sound mode.
+
+        See also:  /unsound, sound

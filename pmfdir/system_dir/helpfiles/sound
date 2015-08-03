@@ -1,0 +1,7 @@
+        Variable:  sound
+
+        When "sound" is true, PMF will match each line of output from MUD
+        against the list of sounds defined with the "/sound" command.
+        If a match is encountered, that sound will be played.
+
+        See also:  /set, /unset, variables, /sound

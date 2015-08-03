@@ -1,0 +1,7 @@
+        Variable:  ignoreeof
+
+        Normally, PMF will disconnect and exit if you press the End-Of-File
+        character (CTRL-D), but if the variable "ignoreeof" is true,
+        the EOF will be ignored and PMF will just continue.
+
+        See also:  /set, /unset, variables, /disconnect, /quit, CTRL-D

@@ -1,0 +1,11 @@
+        Syntax:  /source  FILENAME
+
+        The lines from the file are read and executed, in the same way as if
+        they had been typed on the terminal. Commands to PMF will be
+        interpreted and executed (including other levels of "/source"
+        commands), and the other commands will be sent to the MUD game.
+        History substitution is NOT done on the lines from the file,
+        and the commands will NOT appear on the history list.
+        A dot is printed on the terminal for each executed line.
+
+        See also:  source, pmf-source, /send, /putfile

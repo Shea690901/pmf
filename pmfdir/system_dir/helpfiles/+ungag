@@ -1,0 +1,5 @@
+        Syntax:  /ungag  PATTERN
+
+        Stop suppressing certain lines from MUD.
+
+        See also:  /gag

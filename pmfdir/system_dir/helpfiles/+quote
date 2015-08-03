@@ -1,0 +1,5 @@
+        Syntax:  /quote  REST-OF-LINE
+
+        REST-OF-LINE will be sent to MUD, exactly as it was typed.
+        No alias or history substitutions are performed.
+        This also means that it is pointless to redefine "/quote" as an alias.

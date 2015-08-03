@@ -1,0 +1,5 @@
+        Syntax:  /unaction  PATTERN
+
+        Remove a robot action.
+
+        See also:  /action, /unactionall, robot

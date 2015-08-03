@@ -1,0 +1,9 @@
+   lennes@sumter.cso.uiuc.edu is the person who modified pmf to compile under
+NeXTstep 2.0 using XNeXT. To compile on the NeXT, just follow the instructions
+in pmf.doc and ignore the compiler warnings. To use sound mode on the NeXT,
+look at the file Sndconvert.README; it contains instructions on how to convert
+the sounds from the Sun .au format to NeXT .snd. pmf 1.9 and the sound files
+are also available at beowulf.acc.stolaf.edu here in the States.
+
+                                                Scott Hofmann/Diode
+                                                s-hofmann@uiuc.edu

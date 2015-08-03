@@ -1,0 +1,7 @@
+        When PMF is started, it tries to read a file named ".pmfrc" in your
+        HOME directory. If that file doesn't exist, it looks for a standard
+        init file (whose name was defined when PMF was compiled).
+        It is also possible to give another file name,
+        using the -f flag, when starting PMF.
+
+        See also:  options

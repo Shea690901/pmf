@@ -1,0 +1,13 @@
+        Syntax:  /perform  MUD-COMMAND  [ ACCEPT-TOKEN ]
+
+        The MUD-COMMAND is sent to MUD, and no further commands will be sent
+        until PMF has received a line matching ACCEPT-TOKEN,
+        or just any line if no ACCEPT-TOKEN was given.
+
+        MUD-COMMAND must be one word, i. e. it must be quoted if it contains
+        blanks. ACCEPT-TOKEN must also be one word.
+
+        When matching ACCEPT-TOKEN against output lines, the ACCEPT-TOKEN
+        must either appear at the beginning of a line, with no leading text
+        or white space, or it must be a pattern that can be "dollar-matched"
+        (as in the robot actions) against the output lines.

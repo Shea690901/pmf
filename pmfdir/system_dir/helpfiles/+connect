@@ -1,0 +1,6 @@
+        Syntax:  /connect  [ HOST  [ PORT ] ]
+
+        This command connects to a MUD game on port PORT at host HOST.
+        Usually this is done automatically when PMF has finished reading
+        the init file, but it can be used in the init file so remote
+        commands can be used in the init file.

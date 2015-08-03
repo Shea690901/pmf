@@ -1,0 +1,7 @@
+        Syntax:  /log  [ FILENAME ]
+
+        Write all messages sent to and received from the MUD game to
+        the file FILENAME. Exit log mode by giving the command "/log"
+        without an argument.
+
+        See also:  /debuglog

@@ -1,0 +1,4 @@
+        Syntax:  /status
+
+        Print status for the frontend, like the values of some variables etc.
+        There is a similar command in LPmud, called "status".

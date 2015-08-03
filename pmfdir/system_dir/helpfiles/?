@@ -1,0 +1,23 @@
+Help is available about the following subjects:
+
+Local PMF commands:
+    /action    /crypttell   /getfile  /putfile   /sound        /unalias
+    /alias     /debuglog    /help     /quit      /source       /ungag
+    /beep      /disconnect  /history  /quote     /status       /unset
+    /cd        /dump        /last     /receive   /system       /unsound
+    /connect   /echo        /log      /send      /unaction
+    /cryptsay  /gag         /perform  /set       /unactionall
+
+Local PMF variables:
+    achtung     ignoreeof         robot             substitute_history
+    cryptkey    lines_to_save     screen_length     verbose
+    debug       port              show_receive
+    history     prompt            slash_commands
+    host        replace_control   sound
+
+Miscellaneous:
+    242      FRONT242        frontcd     frontstatus   pmf          variables
+    ?        Padrone         frontecho   frontunset    quit
+    CTRL-C   bug             fronthelp   help          source
+    CTRL-D   documentation   frontquit   init          source-code
+    CTRL-Z   echo            frontset    options       status

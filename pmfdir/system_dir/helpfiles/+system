@@ -1,0 +1,11 @@
+        Syntax: system COMMAND
+
+        This command executes the command COMMAND in a Unix shell.
+
+        Typing "system" without an argument will start your favorite
+        shell as a child-process to PMF. When you leave the shell,
+        you will be back in PMF.
+
+        Note that PMF will sleep until the system command is finished,
+        and if you use it to run a sub-shell a lot of things can happen
+        in the game while you are away.

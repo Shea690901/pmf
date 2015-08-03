@@ -1,0 +1,7 @@
+        Syntax:  /disconnect
+
+        This command disconnects from the MUD game.
+        It doesn't exit from PMF, though, so you will be left
+        in an un-connected mode.
+
+        See also:  /connect, /quit, quit

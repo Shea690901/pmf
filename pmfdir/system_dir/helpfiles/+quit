@@ -1,0 +1,10 @@
+        Syntax:  /quit
+
+        The command "/quit" exits from the PMF program, but you will still
+        be logged in on the MUD game, as a "linkdead" character
+        (at least if the MUD server doesn't detect that you are
+        disconnected and logs you out automatically).
+        You should probably use the quit command in the MUD game instead.
+        In LPmud, it is called "quit".
+
+        See also:  /disconnect, quit, CTRL-C, CTRL-D, CTRL-Z

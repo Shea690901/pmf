@@ -1,0 +1,67 @@
+This directory contains sound files for the Sun Sparcstation. They are
+usable with the "pmf" client available from this same place (130.236.254.13).
+I also have an init file for lpmud.el that plays theses sounds. Tell me
+if you want it.
+
+Most of these files were conceived and performed during one night, filled
+with giggles and chuckles. The main contributors are myself (Pell) and Kjell.
+Other contributions by Padrone, Foul and Bellman. All of us are from NannyMud.
+(130.236.254.13 2000). Here I'll try to describe what you hear.
+
+Updated 13-Feb-91 /Pell
+
+applaud.au	Something from Usenet.
+beep.au		?? (Not currently used)
+bottle.au	Pell dropping a bottle. Very difficult to get a good sound.
+bounce.au	From Usenet.
+burp.au		Kjell.
+cackle.au	Usenet.
+chirp.au	Usenet.
+chuckle.au	Pell.
+clap.au		Pell. (Very hard to get a good clap sound).
+closedoor.au	Kjell rocking in Pell's chair. (Not currently used)
+cough.au	Kjell.
+croak.au	Foul. (Not currently used)
+cry.au		Bellman.
+dance.au	Some Swedish folk music.
+discoduck.au	Well, don't ask me from under which stone this tune crawled up.
+drink.au	Pell.
+fart.au		Pell doing his worst.
+flip.au		Pell.
+french.au	Kjell.
+frown.au	Pell.
+gasp.au		Pell.
+giggle.au	Pell.
+grin.au		Pell.
+groan.au	Usenet (yes, it's a cow. :-).
+growl.au	Pell.
+hiccup.au	Kjell.
+kick.au		Pell & Kjell.
+kiss.au		Kjell.
+knock.au	(Not currently used)
+laugh.au	Pell. (Should need a better one)
+moan.au		Pell.
+opendoor.au	Kjell rocking in Pell's chair. (Not currently used)
+play*		Executable for Sparcs.
+pose.au		From Padrone's copy of Monthy Python's Holy Grail. (Tim)
+puke.au		Kjell.
+purr.au		Can't remember.
+scream.au	Usenet.
+shake.au	Collaboration.
+shiver.au	Pell.
+sigh.au		Pell.
+sing.au		From a Swedish version of Aida (I think). It's Italian anyway!
+slap.au		Pell.
+snap.au		Pell.
+sneeze.au	Pell (I think).
+snicker.au	Pell.
+sniff.au	Pell.
+snore.au	Pell.
+spit.au		Bellman.
+splat.au	Usenet (used when one of Lpd's damned birds dies).
+sulk.au		Pell.
+thank.au	Kjell.
+whisper.au	Kjell.
+whistle.au	Bellman.
+yawn.au		Pell (I think).
+

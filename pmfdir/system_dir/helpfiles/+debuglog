@@ -1,0 +1,11 @@
+        Syntax:  /debuglog  [ FILENAME ]
+
+        This command is similar to /log, i. e.
+        all messages sent to and received from the MUD game will be
+        written on the file FILENAME,
+        but with some extra info about what was sent and received,
+        and when.
+        Exit log mode by giving the command "/debuglog" (or "/log")
+        without an argument.
+
+        See also:  /log

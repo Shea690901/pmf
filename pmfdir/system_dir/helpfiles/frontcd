@@ -1,0 +1,5 @@
+        In PMF version 1.11 and earlier,
+        there was a command called "frontcd".
+        This command is now called "/cd".
+        If you want backwards compatibility, you can define an alias:
+                /alias frontcd /cd

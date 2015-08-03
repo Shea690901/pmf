@@ -1,0 +1,22 @@
+        Syntax: getfile  REMOTE-FILE-NAME  [ LOCAL-FILE-NAME ]
+
+        (LPmud-specific)
+
+        This command gets a file from LPmud using the built-in editor ed
+        to print it. What it does is basically to do these commands, plus
+        the appropriate waiting when needed:
+
+                system "mv LOCAL-FILE-NAME LOCAL-FILE-NAME.bak"
+                ed REMOTE-FILE-NAME
+                $=
+        and, for each ten lines (with line numbers N to M) in the file,
+                N,Mp
+        and finally
+                Q
+
+        If the flag "show_receive" is true,
+        all the text printed by the LPmud game while this is done is shown
+        on the screen, which might sometimes be confusing.
+        You can interrupt an active "/getfile" command by typing CTRL-C.
+
+        See also:  /putfile, /receive, /send, /source, show_receive

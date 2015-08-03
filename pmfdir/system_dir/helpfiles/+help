@@ -1,0 +1,12 @@
+        Syntax:  /help  [ SUBJECT ]
+
+        The command "/help" is the help command used by PMF.
+        It is not simply called "help", since that command is used by LPmud.
+        Typing "/help SUBJECT" will print some information about SUBJECT,
+        and "/help" without an argument, or "/help pmf",
+        or "help pmf", will get you some short info about PMF, and a list of
+        available commands.
+        Help requests are (usually) not case-sensitive, so
+        "/help pmf", "/help Pmf" and "/help PMF" should all work.
+
+        Use "/help ?" to see what subjects you can get help about!

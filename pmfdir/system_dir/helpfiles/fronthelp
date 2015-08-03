@@ -1,0 +1,5 @@
+        In PMF version 1.11 and earlier,
+        there was a command called "fronthelp".
+        This command is now called "/help".
+        If you want backwards compatibility, you can define an alias:
+                /alias fronthelp /help

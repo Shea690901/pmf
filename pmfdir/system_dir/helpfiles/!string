@@ -1,0 +1,14 @@
+        Syntax:  /history  [ NUMBER ]
+
+        PMF has a history list, inspired by csh.
+        The number of commands to save on the history list is
+        controlled by the variable "history".
+
+        The command "history" will print the latest (NUMBER) commands.
+        If PMF is compiled with the GNU readline library, you can use
+        CTRL-P and CTRL-N to step up and down in the history list,
+
+        If the variable "substitute_history" has the value true,
+        you can also use history substitutions ("!!", "!number" or "!string").
+
+        See also:  history, substitute_history, /perform

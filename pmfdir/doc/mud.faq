@@ -1,0 +1,317 @@
+Path: liuida!sunic!mcsun!uunet!cs.utexas.edu!asuvax!gatech!ncar!unmvax!uokmax!news
+From: jds@littlewood.math.okstate.edu (Jennifer "Moira" Smith)
+Newsgroups: rec.games.mud
+Subject: FAQ #1: Muds and Mudding
+Summary: all you ever wanted to know, etc etc
+Keywords: faq muds tiny aber lp diku unter moo
+Message-ID: <1991Sep16.160251.4581@uokmax.ecn.uoknor.edu>
+Date: 16 Sep 91 16:02:51 GMT
+Sender: news@uokmax.ecn.uoknor.edu (Nets)
+Organization: Utter Chaos
+Lines: 304
+
+
+FREQUENTLY ASKED QUESTIONS:  Basic Information about MUDs and MUDding
+
+Last Updated: Mon Sep 16 11:02:41 CDT 1991
+
+Disclaimer: The authors and sources of this document are generally
+            biased towards TinyMUDs and their ilk, since we play
+            them more.
+
+Welcome to the world of MUDding!
+
+ "What is a MUD?"
+
+  A MUD (Multiple User Dimension, Multiple User Dungeon, or Multiple User
+  Dialogue) is a computer program which users can log into and explore.
+  Each user takes control of a computerized persona/avatar/incarnation/
+  character.  You can walk around, chat with other characters, explore
+  dangerous monster-infested areas, solve puzzles, and even create your
+  very own rooms, descriptions and items.  You can also get lost or confused
+  if you jump right in, so be sure to read this document before starting.
+
+"Up there you said 'TinyMUD'...what does that mean?"
+
+  You're pretty quick!  TinyMUD is one kind of MUD program.  There are very
+  many kinds of MUD programs out there -- probably as many as there are
+  computers that run them.  The Tiny- and Teeny- family of MUDs are usually
+  more 'social' in orientation; the players on those MUDs gather, chat,
+  meet friends, make jokes, and discuss things.  The LP- family of MUDs
+  are based on fantasy roleplaying adventure games.  In these, your character
+  runs around killing monsters, finding money, and making experience in the
+  quest to become a wizard.  DikuMUDs and AberMUDs are a bit like LPMUDs. 
+  There are still other programs, called MUCKs or MOOs, that extend the 
+  TinyMUD programs by including a usable programming language.  We suggest
+  that you experiment around to see what you find is the most interesting.
+  If there's one thing MUDdom has, it's variety.
+
+"Great!  So where are MUDs located?"
+
+  MUDs are run on many fine computers across the world.  To play, all you
+  have to do is telnet to the MUD's Internet Protocol Port, and you're in
+  business.  Some MUDs have a policy called "registration" to cut down on
+  abuse of privileges; you might have to send mail to the God/Wizard of the MUD
+  in order to obtain a character.  It's important to note that MUDs are *not*
+  a right, and your access is granted out of trust.  People usually have to
+  pay to use processing time on the large, expensive computers which MUDs
+  often run on, and you're being given a special deal.  Which brings me to
+  another point: MUDs can't really be run on anything less than a largish
+  workstation (currently), so they're usually on academic or corporate
+  workhorse machines.
+
+"What do I do to connect up to a MUD?"
+
+  There are several ways to hook yourself up to a MUD's internet port.  First,
+  you can use 'telnet' once you find out the MUD's network address and port 
+  number.  If, for instance, we knew that ChupsMUD was at the network address
+  'pickle.cs.umsst.edu' at port 4201, we could type:
+       (on a BSD UNIX system)
+       telnet pickle.cs.umsst.edu 4201
+       (or, on some VMS systems)
+       telnet pickle.cs.ummst.edu/port=4201
+  and we'd be ready for action. If we get back an error saying something like
+  "host unknown", we'd want to do the same thing, only using the machine's
+  internet number address, like this: telnet 127.0.0.1 4201.
+  Your second option is to scout out the many fine client programs which
+  exist for the sole purpose of providing a friendly and useful front end 
+  to MUDs. (See 'client', below.)
+
+"What's a client program?"
+  
+  Telnet is a rather ugly way to connect to most muds, since it doesn't
+  do any fancy text wrapping, and if someone says something while you're
+  typing out a line, it will make a mess out of your line, making it 
+  hard to see what you're typing and hard to keep track of what's going
+  on in the mud. A client program is simply another program you use instead
+  of telnet to connect to a mud. Clients also provide useful things such
+  as macros and the ability to gag or highlight certain mud output. Clients
+  are available for anonymous ftp from several sites. See the Frequently
+  Asked Questions posting #2 for more information about clients.
+
+"I'm connected!  Now what do I do?"
+
+  Once you connect, find out what the deal is with respect to you getting
+  a character.  Some MUDs allow you to create your own, and others require
+  you to send off for one via email.  If you have to send off for one, send
+  one e-mail request and cool your heels.  MUDding will be around forever,
+  no need to rush it.  But let's say you've now gotten a character, and you're
+  connected up, and things are starting to get interesting.  At this point,
+  you should do what is probably least intuitive: type 'help', read the
+  instructions and directions, and understand them.  Then, type 'news',
+  read the information, and understand it.  Then (yes, I know, I know...
+  it'll be fun, soon!) practice using the commands given to you until
+  you think you've got a good enough grip to be able to start in on 
+  exploring, questing, socializing, or whatever else tunes your engine.
+
+"Why not just dive in?"
+
+  Some people are easily annoyed when other people clearly have no idea what
+  they are doing, even if they were recently in that position themselves.
+  It'll be much easier for you to cope without some fella saying things
+  you don't understand to you and possibly killing you.  *However*, many
+  MUD players are helpful, and asking them, "excuse me, are you busy?  I'm
+  a brand new player, and I have a question," will often work just fine.
+
+"What's the easiest way to annoy a veteran MUD user?"
+
+  Demand something.  Whine.  Follow them around.  Page or tell them over 
+  and over after they've asked you to stop.  In an LPMUD, steal from corpses
+  of things they just killed.
+
+"What's the easiest way to be a mean veteran MUD user?"
+
+  Don't give help to the new players.  Kill them, ignore them, shout
+  "get a @desc" at them.  These are the best ways to kill off MUDding
+  in general, actually.
+
+"What should I NOT DO in terms of player interaction?"
+
+  You shouldn't do anything that you wouldn't do in real life, even if the
+  world is a fantasy world.  The important thing to remember is that it's
+  the fantasy world of possibly hundreds of people, and not just yours in
+  particular.  There's a human being on the other side of each and every
+  wire!  Always remember that you may meet these other people some day,
+  and they may break your nose.  People who treat others badly gradually
+  build up bad reputations and eventually receive the NO FUN Stamp of
+  Disapproval.  The jury is still out on whether MUDding is "just a game"
+  or "an extension of real life with gamelike qualities", but either way,
+  treat it with *care*.
+
+"What is a 'Wizard' on TinyMUDs/a 'God' on LPmuds?"
+
+  Wizards/Gods are the people who own the database.  They can do whatever
+  they want to whomever they want whenever they want.  A more appropriate 
+  name for them would probably be 'Janitor', since they tend to have to 
+  put up with responsibilities and difficulties (for free) that nobody else
+  would be expected to handle.  Remember, they're human beings on the other
+  side of the wire.  Respect them for their generosity.
+
+"What is a 'Wizard' on an LPmud?"
+
+  An LPmud Wizard is a player who has 'won' the game, and is now able to
+  create new sections of the game.  Wizards are very powerful, but they
+  don't have the right to do whatever they want to you; they must still
+  follow their own set of rules, or face the wrath of the Gods.
+
+"Wait, is it a game, or an extension of real life with gamelike qualities?"
+
+  It's up to you.  Some jaded cynics like to laugh at idealists who think
+  it's partially for real, but I personally think they're not playing it
+  right.  Certainly the hack-'n-slash stuff is only a game, but the social
+  aspects may well be less so.
+
+"Hey, I've got an idea, I'll start my own MUD!"
+
+  More power to you!  Of course, unless you're very good with C, willing
+  to spend a large portion of your life as a Wizard/God, and well versed
+  in the ways and commands of whatever MUD program you are trying to run,
+  you'll fail.  You'll also fail if you don't have a machine to run it on.
+  NOTE:  If you don't *explicitly own* the machine you're thinking about
+  right now, you had better get the permission of the machine owner before
+  you bring up a MUD on his computer.  MUDs are not extremely processing-
+  consumptive, but they do use up some computing power.  You wouldn't want
+  people plugging in their appliances into the outlets of your home without
+  your permission or knowledge, would you?
+
+"OK.  What are these commands you're talking about?"
+
+  Most MUDS have a core of commands which players use to move around and
+  interact with each other.  For instance, there are commands for interacting
+  with other players, like 'say' (or sometimes '"'), and other commands like
+  'look', 'go', etc.  In TinyMUD, there are commands like 'home' (which always
+  places you in your home -- remember that), ':' (pose -- try it), etc.,
+  which allow you to do stuff inside the database.  Commands prefixed by
+  a @ (generally) allow you to change the database!  Commands like @describe,
+  @create, @name, @dig and @link allow you to expand the universe, change it,
+  or even, perhaps, @destroy it, under certain conditions.  In LPMUDs, none of
+  those apply; in order to edit the universe, you have to attain Wizardhood or
+  be the God of the MUD.  Whatever the case, these building commands are
+  beyond the scope of this little sheet -- find the documentation for whatever
+  MUD you're playing with and consume it avidly.  Most MUDs have documentation
+  on-line, although better documentation can be gotten via ftp from other
+  sites.  Ask around, or try looking on watnxt1.ucr.edu (192.31.146.188) or
+  spamalot.ecn.uoknor.edu (129.15.24.15) for documentation.
+
+"Alright!  I think I know what's going on now."
+
+  Now is the time when you should be most careful.  Within reason,
+  don't be afraid to ask questions of other players.
+
+"What's a clueless newbie?"
+
+  A 'newbie' is someone who has only recently begun to participate in some
+  kind of activity.  When we're born, we're all life newbies until we get
+  experience under our belts (or diapers, whatever).  You're a clueless
+  newbie until you've got the hang of MUDding, basically.
+
+"Who should I ask?"
+
+  Wizards are usually helpful; if you know a wizard to be a wizard,
+  then you can usually ask them a question or two.  Make sure they're not
+  busy first.  Also, players who have been logged on for a long time 
+  (which you can check using the WHO command) are often helpful, as they
+  are usually the veterans who've seen it all before.  In LPMUDs, asking
+  relatively high level characters is usually the way to find things out.
+
+"What if I'm completely confused and am casting about for a rope in a vast,
+ churning wilderness of chaos and utter incomprehension?"
+
+  Ask a friend to help you.  Don't post anything in any newsgroup.  Just
+  take it slow, one step at a time, smoothing over the things you don't
+  understand by reading manuals (i.e. 'man telnet'), asking local help,
+  or trying to find people who use MUDs who are at your site.
+
+"What's a dino/Islandia/TinyHELL/original TinyMUD?"
+
+  A dino is someone that has been around for a very long time (cf. 'dinosaur').
+  These people tend to reminisce nostalgically about the other entries in
+  the question above -- dead or nonexistent MUDs which were especially fun
+  or interesting.
+
+"Some people on TinyMUDs seem to delight in killing.  Why?"
+
+  This is an unanswerable Frequently Asked Question.  Everyone's got their
+  own reasons for acting as they do.  If you don't like it, you can always
+  go somewhere else or sometimes kill them back. (See 'haven' below.)
+  Under no circumstances should you take being killed on a TinyMUD seriously.
+  On LP-muds and the like, it's a whole 'nother ballgame.  Some LP-muds 
+  don't allow player killing; some encourage player-killing as a means of
+  self-policing.  Just play by the rules of the mud you're on.
+
+"What is a haven?"
+
+  On many TinyMUDs, there are several flags associated with each room.  The
+  Haven flag is probably the most famous one.  In rooms where the Haven flag is
+  set, no character may kill another.
+
+"What is SPAM?"
+
+  SPAMming, derived from a famous Monty Python sketch, is the flooding of
+  appropriate media with information (such as repeated very long 'say'
+  commands).  Since SPAMming is computationally expensive, it's frowned
+  upon.  SPAMming with intent to harm computer resources is very bad indeed.
+
+"What is a bot?"
+
+  A bot is a computer program which logs into a MUD and pretends to be a
+  human being.  Some of them, like Julia, are pretty clever -- legend has it
+  that Julia's fooled people into believing that she's human.   Others have
+  less functionality.  'Cyborgs' are computer-assisted humans or human-
+  assisted computers.
+
+"What is Maving?"
+
+  Mav is a famous TinyMUDder who sometimes confused whisper with say, thus
+  directing private messages to the whole room.  The meaning of the
+  verb has changed to include making any say/whisper/page/pose typing
+  confusion.
+
+"What is a flame?"
+
+  Flaming is when someone shouts at another person in a vain attempt to
+  convince them that whatever that other person said or believes in is
+  unconditionally wrong or stupid.  Avoid getting into flame wars, and
+  if flamed, laugh it off or ask someone else what you did wrong.
+
+"What is TinySex?"
+
+  TinySex is the act of performing MUD actions to imitate having sex
+  with another character, usually consensually, sometimes with one hand
+  on the keyset, sometimes with two.  Basically, it's speed-writing
+  interactive erotica.  Realize that the other party is not obligated 
+  to be anything like he/she says, and in fact may be playing a joke
+  on you (see 'log', below).
+
+"What is a log?"
+
+  Certain client programs allow logs to be kept of the screen.  A time-
+  worn and somewhat unfriendly trick is to entice someone into having
+  TinySex with you, log the proceedings, and post them to rec.games.mud
+  and have a good laugh at the other person's expense.  Logs are useful
+  for recording interesting or useful information or conversations, as well.
+
+"What is net lag?"
+
+  The Internet (the network which connects your computer to mine) is made
+  up of thousands of interconnected computers.  Between your computer and
+  the computer which houses the MUD, there may be tens, even hundreds, of
+  busily working computers, all of which have to pass data to and fro using
+  high-speed modems, direct lines, satellite uplinks and downlinks, etc.
+  If one of those computers crashes or is suddenly loaded down, you may
+  notice a long lag time between your input and the MUD's reception of
+  that input.  This problem is unsolvable.  Computers which are nearer
+  to the computer running the MUD are less susceptible to netlag.  Apart
+  from logging onto a closer computer, you'll just have to cultivate patience.
+
+-------------------------------------------------------------------------------
+  This posting has been generated as a public service.  If you have any
+  suggestions, questions, additions, comments or criticisms concerning this
+  posting, contact either Moira (jds@math.okstate.edu) or Rhodesia 
+  (fortony@cs.uiuc.edu).  The other Frequently Asked Questions (FAQ) posting
+  contains information dealing with clients, servers, and ftp sites. 
+  While these items aren't necessary, they make the game much more playable.
+  We'd also like to thank ashne and Satoria for their help in writing this
+  FAQ, and everyone else for helpful comments and suggestions. 
+  Have fun!  - Rhodesia and Moira
+

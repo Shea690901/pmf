@@ -1,0 +1,8 @@
+        Variable:  prompt
+
+        If "prompt" is set it will be printed after any local command
+        has been executed by PMF.
+        The "silent mode" (controlled by the variable "verbose")
+        has no effect on this prompt.
+
+        See also:  /set, /unset, variables

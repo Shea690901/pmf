@@ -1,0 +1,6 @@
+        Variable:  cryptkey
+
+        The encryption key used by the commands
+        "/cryptsay" and "/crypttell".
+
+        See also:  /set, /unset, /cryptsay, /crypttell, variables

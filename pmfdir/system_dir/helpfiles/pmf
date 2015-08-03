@@ -1,0 +1,27 @@
+This is PMF (Padrone's MudFrontend). Try "/help version".
+Type "quit" to exit from LPmud, or "/quit" just to kill PMF.
+Typing CTRL-C will always bring you back to command mode.
+Builtin commands:
+
+    /help [ subject ]  -- print help info (also "help pmf")
+    /alias, /unalias   -- alias definitions
+    /dump              -- write definitions and variables to a file
+    /history           -- print history list
+    !!, !number, !str  -- redo commands from the history list
+    /last              -- repeat last lines printed by MUD
+    /quote             -- send a command to MUD without interpreting it
+    /action, /unaction, /unactionall -- define robot actions
+    /sound, /unsound   -- define sound actions (if PMF is set up for it)
+    /gag, /ungag       -- don't print the actions of a specific player
+    /source            -- read and execute a file
+    /send, /receive    -- send or receive text to/from MUD
+    /putfile, /getfile -- send or receive a file to/from LPmud
+    /log, /debuglog    -- save dialogue on a file
+    /set, /unset       -- change the value of variables
+    /status            -- print status of debug flag etc
+    /quit              -- exit from PMF, but don't logout from MUD
+    /cd                -- change directory (locally)
+    /perform, /echo, /beep, /system, /connect, /disconnect -- miscellaneous
+
+Type "/alias" (with no arguments) for a list of user-defined aliases.
+Commands that are not built-in, and not alias-defined, are passed on to MUD.

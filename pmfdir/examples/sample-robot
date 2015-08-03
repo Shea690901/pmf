@@ -1,0 +1,36 @@
+#
+# Some examples of robot /actions for PMF version 1.12.
+# Thomas Padron-McCarhty, padrone@lysator.liu.se, Sept 22, 1991.
+# Type "/source sample-robot" in PMF to load these actions
+# and enter robot mode. You can turn the robot off with "/robotoff".
+#
+# You will probably be killed.
+#
+/action "$1 appears in a solid form." "comfort $L1 $n say Don't give up yet, $1!"
+/action "$1 enters the game." "bow $L1 $n say Welcome, $1!"
+/action "$1 bows before you" "bow $L1"
+/action "$1 bows gracefully" "bow $L1"
+/action "$1 glares at you." "say Hey! $1! What are you looking at? $n poke $L1"
+/action "$1 grins evilly." "poke $L1 $n say Hehehe."
+/action "$1 kicks you" "glare $L1"
+/action "$1 pukes all over you!" "say STOP THAT, $1!"
+/action "$1 growls." "say And what are you growling about, $1? $n glare $L1"
+/action "$1 pokes you in the ribs." "poke $L1"
+/action "$1 slaps you!" "kick $L1"
+/action "$1 pouts." "say Ah, $1, don't take it so hard."
+/action "$1 sighs deeply." "comfort $L1"
+/action "$1 tells you: $2" "/beep $n tell $L1 Hello $1! I am currently in robot mode, but I will be back soon."
+/action "$1 says: $2Padrone$3" "say Hi there, $1! $n say I am currently in robot mode, but I will be back soon."
+/action "$1 says: $2padrone$3" "say Hi there, $1! $n say I am currently in robot mode, but I will be back soon."
+/action "$1 arrives$2" "say Hi there, $1. $n say I noticed that you arrived$2 $n say I am currently in robot mode, but I will be back soon."
+/action "$1 screams loudly" "say Oh, it's not that bad, is it, $L1? $n comfort #L1"
+/action "$1 hits you" "say Help! Help! $1 is trying to kill me! $n kick $L1"
+/action "$1 shouts: $2" "say Oh, what a noise! $n say Couldn't that $1 be a little quiet?"
+/action "A ball of fire explodes in the sky." "say Oh no, not again."
+/action "Harry says: $1" "zap harry"
+#
+/alias /roboton /set robot
+/alias /robotoff /unset robot
+#
+/roboton
+/set verbose

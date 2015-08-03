@@ -1,0 +1,27 @@
+#
+#  This is a list of some LPmud games.
+#  If you are on a Unix system, you can include it in your .cshrc
+#  file, or you can type "source lpmud-addresses" to the shell.
+#  There is a more extensive list of muds in the file "mudlist".
+#
+#  NannyMud -- nanny.lysator.ida.liu (130.236.254.12), port 2000
+#	This LPmud is run by the computer club Lysator at the University
+#	of Link|ping, Sweden. This is the "home" mud of Padrone.
+#	If you send mail to Padrone here, he will probably read it
+#	within a week or so.
+alias nannymud pmf 130.236.254.12 2000
+#
+#  Genesis -- milou.cd.chalmers.se (129.16.48.2), port 2000
+#	The original LPmud. It's run by the computer club at
+#	Chalmers Institute of Technology in G|teborg, Sweden.
+#	The god at this mud is Lars himself.
+#	They've been closed for The Big Version Change for a loooong time now.
+alias genesis pmf 129.16.48.2 2000
+#
+#  BatMud -- palikka.jyu.fi (128.214.7.13), port 2001
+#	An LPmud in Finland. Home of the EVIL guild.
+alias batmud pmf 128.214.7.13 2001
+#
+#  TubMUD -- troilos.cs.tu-berlin.de (130.149.19.79) 7680
+#	And this one is in Germany!
+alias tubmud pmf 130.149.19.79 7680

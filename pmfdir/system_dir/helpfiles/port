@@ -1,0 +1,5 @@
+        Variable:  port
+
+        The port number of the MUD game we are connected to.
+
+        See also:  /set, /unset, variables, host, /connect, /disconnect

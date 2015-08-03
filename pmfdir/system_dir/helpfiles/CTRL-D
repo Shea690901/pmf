@@ -1,0 +1,8 @@
+        CTRL-D
+
+        On most UNIX systems, a CTRL-D typed to the terminal is interpreted
+        as End-Of-File and often equivalent to some kind of quit command.
+        If you type CTRL-D to PMF, and the "ignoreeof" variable has not
+        been set, PMF will exit.
+
+        See also:  /quit, CTRL-C, CTRL-Z

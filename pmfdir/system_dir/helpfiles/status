@@ -1,0 +1,3 @@
+        In LPmud, a command called "status" can be used to look at the
+        current status of the game server.
+        To see the local status of your PMF, use the command "/status".

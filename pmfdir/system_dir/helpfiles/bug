@@ -1,0 +1,13 @@
+        Read the section "Known bugs" in the documentation,
+        and report additional problems to me.
+
+        Bug reports can be sent by email to padrone@lysator.liu.se.
+        Please try to describe how the bug manifested itself,
+        excatly what commands you gave, what you think caused the bug,
+        and (important!) the VERSION of PMF you are using, plus the
+        configuration (you could, for example, include both the
+        .pmfrc file and a file created by the "dump" command).
+
+        There might be a command in the MUD game called "bug",
+        but if you need more info about that you must use the help
+        facilities in the MUD game.

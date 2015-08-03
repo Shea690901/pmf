@@ -1,0 +1,5 @@
+        Syntax:  /unalias  command
+
+        Remove an alias definition.
+
+        See also:  /alias

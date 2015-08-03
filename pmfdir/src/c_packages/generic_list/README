@@ -1,0 +1,91 @@
+
+The "generic lists etc" package - version 0.10 (Sept 21, 1991)
+--------------------------------------------------------------
+
+This is a package for handling lists of something.
+There are also functions in the package for generic sets and
+generic FIFO queues, all implemented using the generic lists.
+
+We call the somethings "objects" (or sometimes "elements").
+The objects are referred to by pointers, so what the lists etc
+contain are really pointers to things of whatever type you want.
+The package never touches the objects pointed to, just the pointers,
+so (if it works on your machine) you can use integers, or other objects
+of the same size as a pointer, instead of pointers.
+
+In a simple list, each object must have a "comparable" property.
+It is not necessary to be able to know if two objects are smaller
+or greater than each other, only if they are equal or not.
+
+In a set, each object must have an "orderable" property that can be
+compared by a function. The objects in the set are sorted with respect
+to that property, and a function to compare objects must be supplied.
+
+The elements in a queue need not be comparable at all,
+but in that case you can not search the queue for an element.
+
+#include the appropriate header file
+("generic_list.h", "generic_set.h" or "generic_fifo.h")
+in your program, and link with the file generic_list.o plus
+- if you need one or both of them - generic_set.o and generic_fifo.o,
+plus the file safe_malloc.o from the "safe_malloc" package.
+You will also need to define a function caled "fatal",
+or use the one in "fatal.o" from the "safe_malloc" package.
+
+These are the functions for handling lists (defined in generic_list.c)
+-- read the comments in the source for how to call them:
+
+	generic_list create_generic_list()
+	void kill_generic_list()
+	element_pointer_type empty_generic_list()
+	element_pointer_type find_in_generic_list()
+	element_pointer_type find_first_in_generic_list()
+	element_pointer_type find_last_in_generic_list()
+	element_pointer_type remove_from_generic_list()
+	element_pointer_type remove_first_from_generic_list()
+	element_pointer_type remove_last_from_generic_list()
+	int add_first_to_generic_list()
+	int add_last_to_generic_list()
+	int get_pos_of_element_in_generic_list()
+	element_pointer_type find_element_at_pos_in_generic_list()
+	element_pointer_type traverse_generic_list()
+	element_pointer_type traverse_generic_list_backwards()
+	int query_generic_list_size()
+	int set_generic_list_increment()
+	element_pointer_type *get_array_inside_generic_list()
+
+These are the set functions (defined in generic_set.c):
+
+	generic_set create_generic_set()
+	void kill_generic_set()
+	element_pointer_type empty_generic_set()
+	element_pointer_type find_in_generic_set()
+	element_pointer_type remove_from_generic_set()
+	element_pointer_type add_to_generic_set()
+	element_pointer_type traverse_generic_set()
+	int query_generic_set_size()
+	int set_generic_set_increment()
+	generic_list get_list_inside_generic_set()
+
+These are the queue functions (defined in generic_fifo.c):
+
+	generic_fifo create_generic_fifo()
+	void kill_generic_fifo()
+	element_pointer_type find_in_generic_fifo()
+	element_pointer_type remove_from_generic_fifo()
+	void queue_on_generic_fifo()
+	element_pointer_type get_from_generic_fifo()
+	element_pointer_type find_first_in_of_generic_fifo()
+	element_pointer_type find_last_in_generic_fifo()
+	element_pointer_type traverse_generic_fifo()
+	element_pointer_type traverse_generic_fifo_backwards()
+	int query_generic_fifo_size()
+	int set_generic_fifo_increment()
+	generic_list get_list_inside_generic_fifo()
+
+element_pointer is defined as char *,
+but if you #define ELEMENT_POINTER_TYPE as some other data type
+before #include'ing "generic_list.h" or one of the other two header
+files, element_pointer will be defined as that data type instead.
+
+		Thomas Padron-McCarthy (padrone@lysator.liu.se)

@@ -1,0 +1,15 @@
+        There are some variables in PMF, and their values
+        effect the behaviour of the MudFrontend.
+
+        The variables are:
+                achtung  cryptkey  debug  history  host  ignoreeof
+                lines_to_save  port  prompt  replace_control  robot
+                screen_length  show_receive  slash_commands  sound
+                substitute_history  verbose
+        and also (probably not of any use to you, puny mortal):
+                internal_debug  ipc_debug
+
+        Use "/set" and "/unset" to change the values of the variables.
+        "/set" with no arguments prints a list of all variables.
+
+        See also:  /set, /unset

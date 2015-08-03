@@ -1,0 +1,17 @@
+        Syntax:  /send  FILENAME  [ ACCEPT-TOKEN ]
+
+        The lines from the file are read and sent directly to MUD.
+        They are NOT interpreted by the MudFrontend program.
+        The commands will NOT appear on the history list.
+
+        After a line has been sent, the MudFrontend will wait for MUD
+        to print a line starting with ACCEPT-TOKEN, or just any line
+        if no ACCEPT-TOKEN is given.
+        ACCEPT-TOKEN must be one word, i. e. it must be quoted if it contains
+        blanks, and it must appear at the beginning of a line, with no
+        leading text or white space, or it will be dollar-matched.
+
+        A dot is printed on the terminal for each line that is sent.
+        You can interrupt an active "/send" command by typing CTRL-C.
+
+        See also:  /receive, /putfile

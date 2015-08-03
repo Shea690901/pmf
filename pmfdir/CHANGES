@@ -1,0 +1,26 @@
+Changes in version 1.12
+-----------------------
+
+PMF version 1.9, 1.10 and 1.11 were very similar.
+The only difference between them except some fixed memory leaks
+and other minor changes was the command "frontcd".
+
+But now, with version 1.12, there are many more changes.
+The changes are mostly internal,
+and the users shouldn't need to worry much about them,
+but some things are different now:
+
+1. Some of the /-commands
+   (the commands you use in PMF when the flag slash_commands is set)
+   have been changed to shorter forms, i. e.
+   instead of /frontset, /fronthelp, /frontcd etc.,
+   they are now called /set, /help and /cd instead.
+
+2. slash_commands is now set to true as default,
+   so if you want (near-)compatibility with older versions of PMF,
+   you should put the line "/unset slash_commands"
+   first in your init file (".pmfrc"),
+   But "frontset" etc is only called "set" now.
+
+3. When a robot action results in several commands being sent to MUD,
+   they are now sent in the right order.

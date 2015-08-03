@@ -1,0 +1,9 @@
+        CTRL-C
+
+        When you type CTRL-C in PMF, all active "/send" and "/receive"
+        commands (including "/getfile" and "/putfile") are terminated,
+        all lines on the queue to be sent to the MUD game are thrown away,
+        and you get back to the command mode,
+        and (if the variable "prompt" is defined) PMF will print a prompt.
+
+        See also:  /quit, /disconnect, CTRL-D, CTRL-Z

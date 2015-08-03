@@ -1,0 +1,10 @@
+        CTRL-Z
+
+        On many UNIX systems, if you type CTRL-Z while in PMF,
+        the process will be temporarily suspended, and you will be
+        returned to the shell.
+        You can restart PMF later, by typing "%N", there N is the
+        job number of PMF. Use the command "jobs" (in the UNIX shell)
+        to see what number it has.
+
+        See also:  /quit, /disconnect, CTRL-D, CTRL-Z

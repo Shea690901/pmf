@@ -1,0 +1,8 @@
+        Variable:  achtung
+
+        The variable "achtung" controls the Achtung! mode.
+        If achtung is true, PMF will beep each time some output from
+        the MUD game has been received.
+        This is useful for low-intensity, background or time-shared playing.
+
+        See also:  /set, /unset, variables

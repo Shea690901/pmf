@@ -1,0 +1,18 @@
+        The syntax for starting PMF is:
+
+                pmf [ -FLAGS ] [ -f INITFILE ]
+                    [ [ HOSTNAME | HOST-IP-ADDRESS ] [ PORTNUMBER ] ]
+
+        If HOSTNAME and/or HOST-IP-ADDRESS is not given, PMF will connect to
+        the host and port supplied in the init file, and, if none, to the
+        default host and port that were defined when PMF was compiled and
+        installed (the constants DEFAULT_HOST_STRING and DEFAULT_PORT_STRING
+        in the file config.h).
+
+        FLAGS can be X, which means X-windows mode (not very advanced, really),
+        or d, meaning to turn ON the debug flag from start,
+        or n, meaning to NOT print the local news file when starting PMF,
+        or s, meaning to turn OFF the verbose flag from start,
+        or 2, meaning 2-window mode (not implemented yet).
+
+        See also:  init

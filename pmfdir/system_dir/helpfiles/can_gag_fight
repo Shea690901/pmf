@@ -1,0 +1,9 @@
+        Variable:  can_gag_fight
+
+        The variable "can_gag_fight" controls gagging, i. e.
+	the suppression of certain messages from the MUD game.
+	Normally, it is not possible to stop messages about fighting
+	("Harry hits you", "Balrog tickles you in the stomach"),
+	but if "can_gag_fight" is set to true, you can stop such messages.
+
+        See also:  /set, /unset, variables, /gag, /ungag

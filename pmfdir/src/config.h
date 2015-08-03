@@ -4,7 +4,7 @@
  *  PMF -- Padrone's MudFrontend, a frontend for (maybe mostly LP-)mud
  *  Thomas Padron-McCarthy (Email: padrone@lysator.liu.se), 1990, 1991
  *  Share and enjoy, but be nice: don't steal my program! Hugo is watching!
- *  This file latest updated: May 25, 1992
+ *  This file latest updated: May 23, 1993
  *
  */
 
@@ -12,7 +12,7 @@
 /*  This is the version number. Please change it if you change the code.
  *  Don't simply increment it, add something instead!
  */
-#define VERSION			"1.12.2 (May 25, 1992)"
+#define VERSION			"1.13 (May 23, 1993)"
 
 /*  LOCAL_PMF_GURU is the person responsible for the installation of PMF.
  *  You don't have to #define LOCAL_PMF_GURU.
@@ -22,17 +22,20 @@
 
 /*  If host and/or port is not given as arguments to PMF, and not given in
  *  the init file either, these defaults will be used.
- *  130.236.254.13 2000 will connect you to NannyMUD at nanny.lysator.liu.se.
+ *  "mud.lysator.liu.se" will connect you to NannyMUD.
+ *  (When I'm writing this, "mud.lysator.liu.se" translates to the
+ *  numerical address 130.236.254.150, but this is subject to change.)
  */
-#define DEFAULT_HOST_STRING	"130.236.254.12"
+#define DEFAULT_HOST_STRING	"mud.lysator.liu.se"
 #define DEFAULT_PORT_NUMBER	2000
 
 /*  SYSTEM_DIR is a directory some files that are used by PMF are stored.
  *  These files are used by everbody who uses PMF on the system,
  *  so don't change them to customize your own PMF. Edit your own
  *  files instead.
+ *  Note that "~" is not expanded in this directory name.
  */
-#define SYSTEM_DIR              "/home/ingatrix3/ida/tompa/pmfdir/system_dir"
+#define SYSTEM_DIR              "/home/ingatrix3/ida/tompa/pmf-1.13/pmfdir/system_dir"
 
 /*  These are the names of some files, usually in the system directory
  *  SYSTEM_DIR that is #defined above.

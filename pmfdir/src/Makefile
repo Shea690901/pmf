@@ -1,7 +1,7 @@
 #
 # Makefile for pmf -- Padrone's MudFrontend
 # Thomas Padron-McCarthy (padrone@lysator.liu.se), 1990, 1991
-# This file latest updated: Sept 22, 1991
+# This file latest updated: May 23, 1993
 #
 # Instructions for compiling (but read the file "pmf.doc" too):
 #
@@ -14,6 +14,9 @@
 #	If the linker complains, saying it cannot find usleep,
 #	define the variable USLEEP_OBJECT below as usleep.o.
 #	If it still doesn't work, try usleep2.o instead of usleep.o.
+#
+#	If the linker complains, saying it cannot find alloca,
+#	define the variable ALLOCA_OBJECT below as alloc.o.
 #
 #	On IBM RT's you might have to add the option -ma to OPTIONS.
 #
@@ -45,6 +48,10 @@ HISTORY_OBJECT = rl_history.o
 # USLEEP_OBJECT = usleep.o
 # USLEEP_OBJECT = usleep2.o
 # USLEEP_OBJECT = usleep3.o
+
+# If it doesn't work otherwise: try defining ALLOCA_OBJECT here:
+#
+# ALLOCA_OBJECT = alloca.o
 
 # If you want to use the GNU C compiler,
 # change the variable CC to "gcc -traditional" instead:
@@ -79,7 +86,8 @@ BASE_OBJECTS = main.o ipc.o use_ipc.o \
 	handle_cmd.o dollar_match.o gag.o cryptsay.o putget.o xmode.o \
 	compile_time.o
 
-OBJECTS = $(BASE_OBJECTS) $(SOUND_OBJECT) $(HISTORY_OBJECT) $(USLEEP_OBJECT)
+OBJECTS = $(BASE_OBJECTS) $(SOUND_OBJECT) $(HISTORY_OBJECT) \
+	$(USLEEP_OBJECT) $(ALLOCA_OBJECT)
 
 HFILES = pmf.h config.h globals.h
 CFILES = alias.c apply.c do_commands.c \
@@ -88,7 +96,8 @@ CFILES = alias.c apply.c do_commands.c \
 	handle_cmd.c help.c ipc.c main.c misc.c display.c robot.c sound.c \
 	signals.c word_split.c tty.c use_ipc.c variables.c usleep.c \
 	usleep2.c usleep3.c line_split.c gag.c cryptsay.c putget.c xmode.c \
-	history.c rl_history.c
+	history.c rl_history.c \
+	alloca.c
 
 READLINE_DIR = readline
 C_PACKAGES_DIR = c_packages
@@ -239,6 +248,7 @@ variables.o: c_packages/safe_malloc/safe_malloc.h
 variables.o: pmf.h
 variables.o: globals.h
 usleep2.o: usleep.c
+alloca.o: alloca.c
 line_split.o: pmf.h
 gag.o: c_packages/safe_malloc/safe_malloc.h
 gag.o: c_packages/strings_galore/str_galore.h

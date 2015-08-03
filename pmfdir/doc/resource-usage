@@ -1,0 +1,73 @@
+
+Resource usage (network bandwith, cpu load etc) by MUD playing
+--------------------------------------------------------------
+
+	This file contains a - partailly re-written - response that
+	I sent to a person who asked me about this issue in 1991.
+
+There has been quite a lot of discussion going on in different places
+- various news groups on the net, among others - about MUDs, resources
+and usage.
+Most of it hasn't been very informative - even if both the flame wars
+and the philosophical debates about rights and property can be rather
+entertaining when watched from the outside. I don't think there has been
+any generally agreed-upon conclusions, and unfortunately I don't have any
+pointers to any papers or so, except maybe some general texts about
+networks and computer communication.
+
+I'll try to give my personal thoughts about this issue, though.
+
+In some places MUD playing has become a problem, but as far as I have
+understood it, the problem has usually been terminals - i. e. MUD players
+using the terminals or workstations or whatever to play MUD when others
+could have used them for real work - and not the load on the different
+networks.
+
+I'm not absolutely sure of what I'm saying here - better consult a net
+guru about it - but I don't think a MUD player takes up much of the
+network capacity - neither on the local net or on the "bigger" net
+connecting him to the MUD game. The amount of data being sent between
+the client and the server is not very great really - the client sends
+a line whenever the user types a command, and the server sends the output
+text from the MUD game, and then we must add the data used by the net
+to wrap these in - maybe 50 bytes or so for each package on a wide network.
+
+And each package contains a whole command line (at least when running
+in line mode, as PMF does), and in the other direction at least one
+line of output text.
+
+Compare this to the traffic on an Ethernet with diskless workstations,
+or with the ftp traffic going on on the Internet, and you'll find
+(at least I think you'll find) that the MUD traffic is negligible.
+
+But the Internet is a large and complex aggregation of network hardware,
+connected together by various kinds of gateways, so strange things could
+happen. In special cases the capacity of the network, or of a certain link
+in the network, could of course be a limiting factor - like the
+(mythological?) 9600 baud link connecting the continent of Australia
+to the rest of the world.
+
+At the other end of the line, on the system running the MUD server,
+the situation can be worse. The strain - both in terms of cpu load
+and disk usage - can be a real problem, at least under some circumstances.
+
+The problem of terminals being occupied by MUD players should (in an ideal
+world) be easily solved by some minimal common sense among the players
+themselves, maybe with the help of an explicit "work goes before games"
+policy.
+
+I don't know the nature of your computing facilities (one big mainframe
+with terminals? diskless workstations? PC:s?) but I don't think a few
+people running a client program like PMF could cause a significant
+or even noticeable increase in the load of your systems, just by the
+processes, and as I said above, network capacity shouldn't be a
+limiting factor either.
+
+For the undergrad education here at the University of Linkoping (in
+Sweden) we have around 100 diskless workstations (Sun SPARCstation 1)
+and 4 or 5 file servers. Some of the students use these workstations
+to run PMF and play a MUD game run by the local computer club (on
+one of their machines, not the university's), and I haven't noticed
+any problems at all.
+
+                Padrone, April 3, 1992

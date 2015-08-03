@@ -1,13 +1,9 @@
-	A new version of PMF (1.12.1) has been installed!
-	One of the features is this news file -- wonderful, isn't it?
-	If you don't want to see it, give the flag "-n" (for "no news") to pmf.
+	This is version 1.13 of PMF.
+	Not much has changed since the previous version.
+	If you don't want to see this news file, give the flag "-n"
+	(for "no news") to pmf.
 	Another useful flag for PMF is "-s" (to stifle its verbosity).
-	Important: From now on all PMF commands start with a slash ("/"),
-	so you should type
-		/alias  h  /history
-	instead of
-		alias  h  history
-	Read the documentation is in "~tompa/pmfdir/doc/pmf.doc"
-	(or use the PMF command "/help").
+	Read the documentation (in the file called "pmf.doc"),
+	or use the PMF command "/help".
 
-			-- Padrone, Sept 22, 1991
+			-- Padrone, May 23, 1993

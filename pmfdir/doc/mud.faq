@@ -1,23 +1,32 @@
-Path: liuida!sunic!mcsun!uunet!cs.utexas.edu!asuvax!gatech!ncar!unmvax!uokmax!news
-From: jds@littlewood.math.okstate.edu (Jennifer "Moira" Smith)
-Newsgroups: rec.games.mud
-Subject: FAQ #1: Muds and Mudding
-Summary: all you ever wanted to know, etc etc
-Keywords: faq muds tiny aber lp diku unter moo
-Message-ID: <1991Sep16.160251.4581@uokmax.ecn.uoknor.edu>
-Date: 16 Sep 91 16:02:51 GMT
-Sender: news@uokmax.ecn.uoknor.edu (Nets)
-Organization: Utter Chaos
-Lines: 304
+Xref: liuida rec.games.mud.announce:363 rec.games.mud.misc:3532 alt.mud:4039 news.answers:8475 rec.answers:909
+Newsgroups: rec.games.mud.announce,rec.games.mud.misc,alt.mud,news.answers,rec.answers
+Path: liuida!sunic!pipex!bnr.co.uk!bnrgate!nott!torn!utnut!cs.utexas.edu!convex!constellation!hardy.math.okstate.edu!jds
+From: jds@math.okstate.edu (Jennifer "Moira" Smith)
+Subject: [rec.games.mud]: FAQ #1/3: MUDs and MUDding
+Message-ID: <faq_muds_737532007@math.okstate.edu>
+Followup-To: rec.games.mud.misc
+Summary: basic info on muds
+Keywords: muds aber lp tiny muck mush moo uber unter diku smug muse
+Lines: 411
+Sender: jds@math.okstate.edu (Jennifer Smith)
+Supersedes: <faq_muds_736236014@math.okstate.edu>
+Reply-To: jds@math.okstate.edu
+Organization: Oklahoma State University, Math Department
+Date: Sun, 16 May 1993 06:00:15 GMT
+Approved: news-answers-request@MIT.Edu,rgm-announce-request@glia.biostr.washington.edu
+Expires: Mon, 14 Jun 1993 06:00:07 GMT
 
+Archive-name: games/mud-faq/part1
+Version: $Id: faq.muds,v 2.11 92/12/26 16:48:45 jds Exp $
 
 FREQUENTLY ASKED QUESTIONS:  Basic Information about MUDs and MUDding
 
-Last Updated: Mon Sep 16 11:02:41 CDT 1991
+This is part 1 in a 3 part series of FAQs.
 
 Disclaimer: The authors and sources of this document are generally
             biased towards TinyMUDs and their ilk, since we play
-            them more.
+            them more.  An attempt is being made to fairly cover
+            all available muds.
 
 Welcome to the world of MUDding!
 
@@ -38,15 +47,26 @@ Welcome to the world of MUDding!
   computers that run them.  The Tiny- and Teeny- family of MUDs are usually
   more 'social' in orientation; the players on those MUDs gather, chat,
   meet friends, make jokes, and discuss things.  The LP- family of MUDs
-  are based on fantasy roleplaying adventure games.  In these, your character
-  runs around killing monsters, finding money, and making experience in the
-  quest to become a wizard.  DikuMUDs and AberMUDs are a bit like LPMUDs. 
-  There are still other programs, called MUCKs or MOOs, that extend the 
-  TinyMUD programs by including a usable programming language.  We suggest
-  that you experiment around to see what you find is the most interesting.
-  If there's one thing MUDdom has, it's variety.
+  are based on roleplaying adventure games.  In these, your character runs
+  around killing monsters, finding money, and making experience in the
+  quest to become a wizard.  DikuMUDs and AberMUDs are a bit like LPMUDs,
+  except that LPMUD wizards have access to a very powerful programming
+  language with which they can add more sections to the database.
+  There are still other programs, called MUCKs or MUSHes, that extend the 
+  TinyMUD programs by including a usable programming language. MOOs
+  have an object-oriented programming language, and are more 'social'
+  in nature.  UnterMUDs can connect to each other directly, and have both
+  a scripting language and a programming language.  BSXMUDs are LPMUDs
+  with simple graphics.  We suggest that you experiment around to see what
+  you find is the most interesting.  If there's one thing MUDdom has, 
+  it's variety.
 
 "Great!  So where are MUDs located?"
+
+  Watch the USENET newsgroup rec.games.mud.announce.  Every Friday a quite 
+  complete listing of MUDs is posted.  If you can't wait till Friday, you can
+  email mudlist@glia.biostr.washington.edu and ask for one, or they're
+  available for FTP from caisr2.caisr.cwru.edu(129.22.24.22) in /pub/mud. 
 
   MUDs are run on many fine computers across the world.  To play, all you
   have to do is telnet to the MUD's Internet Protocol Port, and you're in
@@ -55,10 +75,23 @@ Welcome to the world of MUDding!
   in order to obtain a character.  It's important to note that MUDs are *not*
   a right, and your access is granted out of trust.  People usually have to
   pay to use processing time on the large, expensive computers which MUDs
-  often run on, and you're being given a special deal.  Which brings me to
+  often run on, and you're being given a special deal.  Which brings us to
   another point: MUDs can't really be run on anything less than a largish
   workstation (currently), so they're usually on academic or corporate
   workhorse machines.
+
+"But I paid money for my account!  MUDding is a right, isn't it?"
+
+  Don't believe that for a second.  When you paid money to your school's
+  computer department for an account, you entered into a contract with
+  that department.  Most schools have a well written Computer Policy
+  document, that will detail exactly what you have rights to.  Most
+  schools classify MUD as a game, and games as non-essentials.  Therefore,
+  if your school decides to shut off all games, or disallow you to telnet
+  out to play muds, you're stuck.  Don't try to get around it; they'll
+  find you.  Instead, try to talk to the Powers That Be, and see why they
+  did what they did.  They may have very good reasons for it (such as
+  limited resource that really need to be dedicated to schoolwork). 
 
 "What do I do to connect up to a MUD?"
 
@@ -66,13 +99,16 @@ Welcome to the world of MUDding!
   you can use 'telnet' once you find out the MUD's network address and port 
   number.  If, for instance, we knew that ChupsMUD was at the network address
   'pickle.cs.umsst.edu' at port 4201, we could type:
-       (on a BSD UNIX system)
+       (on most UNIX systems)
        telnet pickle.cs.umsst.edu 4201
        (or, on some VMS systems)
        telnet pickle.cs.ummst.edu/port=4201
-  and we'd be ready for action. If we get back an error saying something like
+  and we'd be ready for action.  If we get back an error saying something like
   "host unknown", we'd want to do the same thing, only using the machine's
-  internet number address, like this: telnet 127.0.0.1 4201.
+  internet number address, like this: telnet 127.0.0.1 4201.  If you're using
+  straight telnet on a VMS system, you might have to make sure that your
+  terminal has "newlines" turned on.  If it doesn't, the mud's output will get
+  spewed across the screen in a most ugly fashion.
   Your second option is to scout out the many fine client programs which
   exist for the sole purpose of providing a friendly and useful front end 
   to MUDs. (See 'client', below.)
@@ -83,10 +119,10 @@ Welcome to the world of MUDding!
   do any fancy text wrapping, and if someone says something while you're
   typing out a line, it will make a mess out of your line, making it 
   hard to see what you're typing and hard to keep track of what's going
-  on in the mud. A client program is simply another program you use instead
-  of telnet to connect to a mud. Clients also provide useful things such
-  as macros and the ability to gag or highlight certain mud output. Clients
-  are available for anonymous ftp from several sites. See the Frequently
+  on in the mud.  A client program is simply another program you use instead
+  of telnet to connect to a mud.  Clients also provide useful things such
+  as macros and the ability to gag or highlight certain mud output.  Clients
+  are available for anonymous ftp from several sites.  See the Frequently
   Asked Questions posting #2 for more information about clients.
 
 "I'm connected!  Now what do I do?"
@@ -99,7 +135,7 @@ Welcome to the world of MUDding!
   connected up, and things are starting to get interesting.  At this point,
   you should do what is probably least intuitive: type 'help', read the
   instructions and directions, and understand them.  Then, type 'news',
-  read the information, and understand it.  Then (yes, I know, I know...
+  read the information, and understand it.  Then (yes, we know, we know...
   it'll be fun, soon!) practice using the commands given to you until
   you think you've got a good enough grip to be able to start in on 
   exploring, questing, socializing, or whatever else tunes your engine.
@@ -113,16 +149,68 @@ Welcome to the world of MUDding!
   MUD players are helpful, and asking them, "excuse me, are you busy?  I'm
   a brand new player, and I have a question," will often work just fine.
 
+"What should I use as a password for my mud character?"
+
+  You should pick a password just as you do for any computer account.  Use a
+  word, or better yet, a phrase or anagram, that isn't obvious.  Don't, for
+  instance, use the same name as your character, or your own first name, or
+  your girl/boyfriend's name.  And never never use the same password as the
+  one on your computer account.  Most MUDs prevent people from getting the 
+  passwords from within the mud, and most encrypt the password when it's
+  store in the database files.  However, there is nothing preventing the
+  MUD's owner from modifying the code to dump the passwords to a file, along
+  with other information such as the host you connected from.  Using this
+  information, an evil MUD admin could probably figure out your login name
+  and get into your account easily.  It's also not a good idea to use the
+  same password on different MUDs, since if your password gets out on one
+  MUD, all your MUD characters have been compromised.  This is ESPECIALLY
+  important for MUD Wizards and Gods.  Use the auto-login feature of your
+  client, if it has one, and protect the file containing the login information
+  against reading by others.
+
+  This story comes from Alec Muffett, author of Crack and maintainer of the
+  alt.security FAQ.
+
+       aem@aberystwyth.ac.uk: The best story I have is of a student 
+       friend of mine (call him Bob) who spent his industrial year at
+       a major computer manufacturing company.  In his holidays, Bob
+       would come back to college and play AberMUD on my system.
+
+       Part of Bob's job at the company involved systems management, 
+       and the company was very hot on security, so all the passwords
+       were random strings of letters, with no sensible order.  It was
+       imperative that the passwords were secure (this involved writing
+       the random passwords down and locking them in big, heavy duty safes).
+
+       One day, on a whim, I fed the MUD persona file passwords into 
+       Crack as a dictionary (the passwords were stored plaintext) 
+       and then ran Crack on our systems password file.  A few student
+       accounts came up, but nothing special.  I told the students
+       concerned to change their passwords - that was the end of it.
+
+       Being the lazy guy I am, I forgot to remove the passwords from
+       the Crack dictionary, and when I posted the next version to
+       USENET, the words went too.  It went to the comp.sources.misc
+       moderator, came back over USENET, and eventually wound up at
+       Bob's company.  Round trip: ~10,000 miles.
+
+       Being a cool kinda student sysadmin dude, Bob ran the new version
+       of Crack when it arrived.  When it immediately churned out the
+       root password on his machine, he damn near fainted...
+
+       The moral of this story is: never use the same password in two
+       different places, and especially on untrusted systems (like MUDs).
+
 "What's the easiest way to annoy a veteran MUD user?"
 
   Demand something.  Whine.  Follow them around.  Page or tell them over 
-  and over after they've asked you to stop.  In an LPMUD, steal from corpses
-  of things they just killed.
+  and over after they've asked you to stop.  In the combat MUDs, steal 
+  from corpses of things they just killed.
 
 "What's the easiest way to be a mean veteran MUD user?"
 
   Don't give help to the new players.  Kill them, ignore them, shout
-  "get a @desc" at them.  These are the best ways to kill off MUDding
+  "get a description" at them.  These are the best ways to kill off MUDding
   in general, actually.
 
 "What should I NOT DO in terms of player interaction?"
@@ -138,26 +226,26 @@ Welcome to the world of MUDding!
   or "an extension of real life with gamelike qualities", but either way,
   treat it with *care*.
 
-"What is a 'Wizard' on TinyMUDs/a 'God' on LPmuds?"
+"What is a 'Wizard' or 'God'?"
 
-  Wizards/Gods are the people who own the database.  They can do whatever
-  they want to whomever they want whenever they want.  A more appropriate 
-  name for them would probably be 'Janitor', since they tend to have to 
-  put up with responsibilities and difficulties (for free) that nobody else
-  would be expected to handle.  Remember, they're human beings on the other
-  side of the wire.  Respect them for their generosity.
-
-"What is a 'Wizard' on an LPmud?"
-
-  An LPmud Wizard is a player who has 'won' the game, and is now able to
-  create new sections of the game.  Wizards are very powerful, but they
-  don't have the right to do whatever they want to you; they must still
-  follow their own set of rules, or face the wrath of the Gods.
+  Gods are the people who own the database.  In most MUDs, Wizards are
+  barely distinguishable from Gods - they're just barely one step down
+  from the God of the MUD.  An LPMUD Wizard is a player who has 'won'
+  the game, and is now able to create new sections of the game.  LPMUD
+  wizards are very powerful, but they don't have the right to do whatever
+  they want to you; they must still follow their own set of rules, or face
+  the wrath of the Gods.  Gods can do whatever they want to whomever they
+  want whenever they want.  
+  A more appropriate name for wizards would probably be 'Janitor', since 
+  they tend to have to put up with responsibilities and difficulties (for 
+  free) that nobody else would be expected to handle.  Remember, they're
+  human beings on the other side of the wire.  Respect them for their
+  generosity.
 
 "Wait, is it a game, or an extension of real life with gamelike qualities?"
 
   It's up to you.  Some jaded cynics like to laugh at idealists who think
-  it's partially for real, but I personally think they're not playing it
+  it's partially for real, but we personally think they're not playing it
   right.  Certainly the hack-'n-slash stuff is only a game, but the social
   aspects may well be less so.
 
@@ -190,8 +278,7 @@ Welcome to the world of MUDding!
   beyond the scope of this little sheet -- find the documentation for whatever
   MUD you're playing with and consume it avidly.  Most MUDs have documentation
   on-line, although better documentation can be gotten via ftp from other
-  sites.  Ask around, or try looking on watnxt1.ucr.edu (192.31.146.188) or
-  spamalot.ecn.uoknor.edu (129.15.24.15) for documentation.
+  sites.  Ask around, or try looking on ferkel.ucsb.edu (128.111.72.60).
 
 "Alright!  I think I know what's going on now."
 
@@ -211,8 +298,9 @@ Welcome to the world of MUDding!
   then you can usually ask them a question or two.  Make sure they're not
   busy first.  Also, players who have been logged on for a long time 
   (which you can check using the WHO command) are often helpful, as they
-  are usually the veterans who've seen it all before.  In LPMUDs, asking
-  relatively high level characters is usually the way to find things out.
+  are usually the veterans who've seen it all before.  In combat MUDs,
+  asking relatively high level characters is usually the way to find 
+  things out.
 
 "What if I'm completely confused and am casting about for a rope in a vast,
  churning wilderness of chaos and utter incomprehension?"
@@ -221,6 +309,28 @@ Welcome to the world of MUDding!
   take it slow, one step at a time, smoothing over the things you don't
   understand by reading manuals (i.e. 'man telnet'), asking local help,
   or trying to find people who use MUDs who are at your site.
+
+"What are all these newsgroups anyway?"
+
+   There are several USENET newsgroups associated with MUDs.  The first (and
+   least used) is alt.mud.  When it got popular, the newsgroup rec.games.mud
+   was then created, and when it got too noisy and chaotic, a few new groups
+   were split off of the main one (rec.games.mud is no longer a "real"
+   newsgroup - all of its volume went to rec.games.mud.misc).  The current
+   newsgroups are:
+        rec.games.mud.admin     -  Postings pertaining to the administrative
+                                   side of MUDs.
+        rec.games.mud.announce  -  moderated group, where announcements of
+                                   MUDs opening, closing, moving, partying,
+                                   etc are posted.
+        rec.games.mud.diku      -  Postings pertaining to DikuMUDs.
+        rec.games.mud.lp        -  Postings pertaining to LPMUDs.
+        rec.games.mud.misc      -  Miscellaneous postings.
+        rec.games.mud.tiny      -  Postings pertaining to the Tiny* family
+                                   of MUDs.
+   If you feel you must post something to USENET, please do it in the
+   group where it best belongs - no posts about TinyMUSH in the Diku
+   group, no questions about an LPMUD in the Tiny group, etc.
 
 "What's a dino/Islandia/TinyHELL/original TinyMUD?"
 
@@ -235,14 +345,14 @@ Welcome to the world of MUDding!
   own reasons for acting as they do.  If you don't like it, you can always
   go somewhere else or sometimes kill them back. (See 'haven' below.)
   Under no circumstances should you take being killed on a TinyMUD seriously.
-  On LP-muds and the like, it's a whole 'nother ballgame.  Some LP-muds 
-  don't allow player killing; some encourage player-killing as a means of
-  self-policing.  Just play by the rules of the mud you're on.
+  On combat MUDs such as LPMUD, it's a whole 'nother ballgame.  Some combat
+  MUDs don't allow player killing; some encourage player-killing as a means
+  of self-policing.  Just play by the rules of the mud you're on.
 
 "What is a haven?"
 
   On many TinyMUDs, there are several flags associated with each room.  The
-  Haven flag is probably the most famous one.  In rooms where the Haven flag is
+  HAVEN flag is probably the most famous one.  In rooms where the HAVEN flag is
   set, no character may kill another.
 
 "What is SPAM?"
@@ -262,10 +372,10 @@ Welcome to the world of MUDding!
 
 "What is Maving?"
 
-  Mav is a famous TinyMUDder who sometimes confused whisper with say, thus
-  directing private messages to the whole room.  The meaning of the
-  verb has changed to include making any say/whisper/page/pose typing
-  confusion.
+  Mav is a famous TinyMUDder who sometimes accidentally left a colon on
+  the front of a whisper, thus directing private messages to the whole
+  room.  The meaning of the verb has changed to include making any 
+  say/whisper/page/pose typing confusion.
 
 "What is a flame?"
 
@@ -277,8 +387,8 @@ Welcome to the world of MUDding!
 "What is TinySex?"
 
   TinySex is the act of performing MUD actions to imitate having sex
-  with another character, usually consensually, sometimes with one hand
-  on the keyset, sometimes with two.  Basically, it's speed-writing
+  with another character, usually consentually, sometimes with one hand
+  on the keyboard, sometimes with two.  Basically, it's speed-writing
   interactive erotica.  Realize that the other party is not obligated 
   to be anything like he/she says, and in fact may be playing a joke
   on you (see 'log', below).
@@ -294,24 +404,34 @@ Welcome to the world of MUDding!
 "What is net lag?"
 
   The Internet (the network which connects your computer to mine) is made
-  up of thousands of interconnected computers.  Between your computer and
-  the computer which houses the MUD, there may be tens, even hundreds, of
-  busily working computers, all of which have to pass data to and fro using
-  high-speed modems, direct lines, satellite uplinks and downlinks, etc.
-  If one of those computers crashes or is suddenly loaded down, you may
-  notice a long lag time between your input and the MUD's reception of
-  that input.  This problem is unsolvable.  Computers which are nearer
-  to the computer running the MUD are less susceptible to netlag.  Apart
-  from logging onto a closer computer, you'll just have to cultivate patience.
+  up of thousands of interconnected networks.  Between your computer and
+  the computer which houses the MUD, there may be up to 30 gateways and
+  links connecting them over serial lines, high-speed modems, leased lines,
+  satellite uplinks, etc.  If one of these gateways or lines crashes, is
+  suddenly overloaded, or gets routing confused, you may notice a long
+  time of lag time between your imput and the MUD's reception of that
+  input.  Computers which are nearer to the computer running the MUD are
+  less susceptible to netlag.  Another source of lag is if the computer
+  which hosts the MUD is overloaded.  When netlag happens, it is best to
+  just patiently wait for it to pass.
 
 -------------------------------------------------------------------------------
   This posting has been generated as a public service.  If you have any
   suggestions, questions, additions, comments or criticisms concerning this
-  posting, contact either Moira (jds@math.okstate.edu) or Rhodesia 
-  (fortony@cs.uiuc.edu).  The other Frequently Asked Questions (FAQ) posting
-  contains information dealing with clients, servers, and ftp sites. 
-  While these items aren't necessary, they make the game much more playable.
-  We'd also like to thank ashne and Satoria for their help in writing this
-  FAQ, and everyone else for helpful comments and suggestions. 
-  Have fun!  - Rhodesia and Moira
+  posting, contact either Moira (jds@math.okstate.edu) or cthonics 
+  (fortony@sonne.cso.uiuc.edu).  Other Frequently Asked Questions (FAQ) 
+  postings contain information dealing with clients, servers, RWHO, and FTP 
+  sites.  While these items aren't necessary, they make the game much more
+  playable.  We'd also like to thank ashne and Satoria for their help in
+  writing this FAQ, and everyone else for helpful comments and suggestions. 
+  Thanks again to Alec Muffett (aem@aberystwyth.ac.uk) of alt.security.
+  The most recent versions of these FAQs are archived on ftp.math.okstate.edu
+  (139.78.10.6) in pub/muds/misc/mud-faq, plus on rtfm.mit.edu(18.172.1.27)
+  in the news.answers archives.  Have fun!  - Moira and cthonics
+
+-- 
+Jennifer Smith
+jds@math.okstate.edu
+On MUDs: Moira, RosaLil, Jasra, etc.	      |   It's the terror of knowing
+Here, have a clue. Take two, they're small.   |    What this world is about
 

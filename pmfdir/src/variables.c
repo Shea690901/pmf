@@ -4,7 +4,7 @@
  *  PMF -- Padrone's MudFrontend, a frontend for (maybe mostly LP-)mud
  *  Thomas Padron-McCarthy (Email: padrone@lysator.liu.se), 1990, 1991
  *  Share and enjoy, but be nice: don't steal my program! Hugo is watching!
- *  This file latest updated: Sept 21, 1991
+ *  This file latest updated: May 23, 1993
  *
  */
 
@@ -38,9 +38,10 @@ static struct variable_struct variables[] = {
     { "show_receive", NULL },
     { "lines_to_save", NULL },
     { "screen_length", NULL },
-    { "cryptkey", NULL }
+    { "cryptkey", NULL },
+    { "can_gag_fight", NULL }
 };
-#define NUMBER_OF_VARIABLES 19
+#define NUMBER_OF_VARIABLES 20
 
 /*---------------------------------------------------------------------------*/
 
@@ -221,6 +222,8 @@ char *var_name, *val;
     
     if (!strcmp(var_name, "achtung"))
 	achtung = (int)val;
+    else if (!strcmp(var_name, "can_gag_fight"))
+	can_gag_fight = (int)val;
     else if (!strcmp(var_name, "debug"))
 	debug = (int)val;
     else if (!strcmp(var_name, "ipc_debug"))

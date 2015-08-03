@@ -4,7 +4,7 @@
  *  PMF -- Padrone's MudFrontend, a frontend for (maybe mostly LP-)mud
  *  Thomas Padron-McCarthy (Email: padrone@lysator.liu.se), 1990, 1991
  *  Share and enjoy, but be nice: don't steal my program! Hugo is watching!
- *  This file latest updated: Sept 22, 1991
+ *  This file latest updated: May 23, 1993
  *
  */
 
@@ -143,7 +143,7 @@ int communicate_with_mud()
     char *line_from_mud, *line_to_mud;
     /* These variables are used to save the state between calls: */
     /* static int waiting_for_response = 0; -- moved outside! */
-    static char *confirm_string[MAX_CONFIRM_STRING_LENGTH + 1];
+    static char confirm_string[MAX_CONFIRM_STRING_LENGTH + 1];
     static int confirm_string_length;
     int retval, was_gag;
     char *nl_p;
@@ -196,7 +196,8 @@ int communicate_with_mud()
 	    nl_p = NULL;
 
 	/* Checking for gagging: newlines stripped! */
-	was_gag = is_gag_line(line_from_mud) && !fighting_line(line_from_mud);
+	was_gag = is_gag_line(line_from_mud)
+	          && (can_gag_fight || !fighting_line(line_from_mud));
 
 	/* The secret stuff! */
 	if (cryptkey) {

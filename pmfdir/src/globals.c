@@ -4,7 +4,7 @@
  *  PMF -- Padrone's MudFrontend, a frontend for (maybe mostly LP-)mud
  *  Thomas Padron-McCarthy (Email: padrone@lysator.liu.se), 1990, 1991
  *  Share and enjoy, but be nice: don't steal my program! Hugo is watching!
- *  This file latest updated: Sept 21, 1991
+ *  This file latest updated: May 23, 1993
  *
  */
 
@@ -18,7 +18,8 @@
  */
 int achtung, debug, ignoreeof, robot_mode, sound_mode, verbose,
     slash_commands, substitute_history, internal_debug, ipc_debug,
-    show_receive, replace_control, lines_to_save, screen_length;
+    show_receive, replace_control, lines_to_save, screen_length,
+    can_gag_fight;
 char *pmf_prompt;
 char *host_string = NULL, *port_string = NULL;
 char *cryptkey = NULL;

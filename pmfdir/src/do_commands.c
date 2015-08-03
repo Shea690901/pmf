@@ -4,7 +4,7 @@
  *  PMF -- Padrone's MudFrontend, a frontend for (maybe mostly LP-)mud
  *  Thomas Padron-McCarthy (Email: padrone@lysator.liu.se), 1990, 1991
  *  Share and enjoy, but be nice: don't steal my program! Hugo is watching!
- *  This file latest updated: Sept 21, 1991
+ *  This file latest updated: Sept 23, 1993
  *
  */
 
@@ -98,8 +98,11 @@ register char *cp;
 {
 
     /* First, skip leading white space. */
-    while (isspace(*cp))
-        ++cp;
+    while (cp && *cp && isspace(*cp))   /* ARONSSON WAS HERE */
+	++cp;
+
+    if (!cp || !*cp)                    /* ARONSSON WAS HERE */
+        return 1;                  /* Empty lines are comment lines */
 
     /* Comment lines are lines that start with # (even after white space) */
     return (*cp == '#');

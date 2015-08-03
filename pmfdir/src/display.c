@@ -4,7 +4,7 @@
  *  PMF -- Padrone's MudFrontend, a frontend for (maybe mostly LP-)mud
  *  Thomas Padron-McCarthy (Email: padrone@lysator.liu.se), 1990, 1991
  *  Share and enjoy, but be nice: don't steal my program! Hugo is watching!
- *  This file latest updated: Sept 21, 1991
+ *  This file latest updated: Sept 23, 1993
  *
  */
 
@@ -34,7 +34,7 @@ static lines_printed;	/* On this screen */
 rdisplay(fmt, a1, a2, a3, a4, a5)
   char *fmt, *a1, *a2, *a3, *a4, *a5;
 {
-    static buf[2000];
+    static char buf[2000];
 
     sprintf(buf, fmt, a1, a2, a3, a4, a5);
     show_to_user(buf);

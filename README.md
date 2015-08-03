@@ -14,7 +14,7 @@ At the date of writing this the correct URL is:
 https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 
 The last official version released by Padrone is 1.13.1
-This is currently 1.12.2, soundfiles usable with pmf (at least on SunOS/Solaris, for other OS it might be neccessary to convert them)
+This is currently 1.13, soundfiles usable with pmf (at least on SunOS/Solaris, for other OS it might be neccessary to convert them)
 are provided within the lpmud-sound directory, along with a sample configuration (again for SunOS/Solaris).
 If you want to use those soundfiles you might also need to supply another play-program, since the one provided with these soundfiles
 will probably not run on your system, either because it's to old, the wrong architecture or the wrong OS.

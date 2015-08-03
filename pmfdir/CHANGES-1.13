@@ -1,0 +1,9 @@
+Changes in version 1.13
+-----------------------
+
+PMF version 1.12 and 1.13 are very similar.
+The only changes that a user should notece are these:
+
+1. There is now a flag called "can_gag_fight".
+
+2. Empty lines in ".pmfrc" are ignored.
